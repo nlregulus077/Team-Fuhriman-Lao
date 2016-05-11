@@ -5,6 +5,8 @@
  */
 package detective;
 
+import cit260.byui.detective.model.Player;
+
 /**
  *
  * @author Nina
@@ -15,7 +17,12 @@ public class Detective {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Jack Black");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
     }
     
 }
