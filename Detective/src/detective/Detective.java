@@ -5,6 +5,10 @@
  */
 package detective;
 
+import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Location;
+import byui.cit260.detective.model.Map;
+import byui.cit260.detective.model.Tool;
 import cit260.byui.detective.model.Player;
 import cit260.byui.detective.model.Character;
 import cit260.byui.detective.model.CombatScene;
@@ -62,6 +66,34 @@ public class Detective {
         
         String combatInfo = combat.toString();
         System.out.println(combatInfo);
+        Game newGame = new Game();
+        newGame.setHighScore(5.0);
+        
+        String gameInfo = newGame.toString();
+        System.out.println(gameInfo);
+        
+        Map newMap = new Map();
+        newMap.setRowCount(6.0);
+        newMap.setColumnCount(6.0);
+        
+        String mapInfo = newMap.toString();
+        System.out.println(mapInfo);
+        
+        Tool newTool = new Tool();
+        newTool.setName("Gun");
+        newTool.setType("Revolver");
+        newTool.setDescription("Big");
+        
+        String toolInfo = newTool.toString();
+        System.out.println(toolInfo);
+        
+        Location newLocation = new Location();
+        newLocation.setVisited("Visited");
+        newLocation.setRow(4.0);
+        newLocation.setColumn(4.0);
+        
+        String locationInfo = newLocation.toString();
+        System.out.println(locationInfo);
     }
     
 }
