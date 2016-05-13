@@ -12,6 +12,8 @@ import byui.cit260.detective.model.Tool;
 import cit260.byui.detective.model.Player;
 import cit260.byui.detective.model.Character;
 import cit260.byui.detective.model.CombatScene;
+import cit260.byui.detective.model.CunningScene;
+import cit260.byui.detective.model.IntelligenceScene;
 import cit260.byui.detective.model.Scene;
 /**
  *
@@ -66,12 +68,38 @@ public class Detective {
         
         String combatInfo = combat.toString();
         System.out.println(combatInfo);
+        
+        // intelligence
+        IntelligenceScene intelligence = new IntelligenceScene();
+        
+        intelligence.setLocation("Abandoned Warehouse");
+        intelligence.setDescription("You have arrived at an abandoned warehouse.  Nothing seems out of the ordinary.");
+        intelligence.setOptions("Use\n Observe\n");
+        intelligence.setIntelligenceRequirment(4.0);
+        
+        String intelInfo = intelligence.toString();
+        System.out.println(intelInfo);
+        
+        // cunning
+        
+        CunningScene cunning = new CunningScene();
+        
+        cunning.setLocation("Underground Lair");
+        cunning.setDescription("You arrived in an underground base.  There's thug nearby.");
+        cunning.setOptions("Fight\n Sneak\n");
+        cunning.setCunningRequirement(3.5);
+        
+        String cunningInfo = cunning.toString();
+        System.out.println(cunningInfo);
+        
+        // game
         Game newGame = new Game();
         newGame.setHighScore(5.0);
         
         String gameInfo = newGame.toString();
         System.out.println(gameInfo);
         
+        // map
         Map newMap = new Map();
         newMap.setRowCount(6.0);
         newMap.setColumnCount(6.0);
@@ -79,6 +107,7 @@ public class Detective {
         String mapInfo = newMap.toString();
         System.out.println(mapInfo);
         
+        // tools
         Tool newTool = new Tool();
         newTool.setName("Gun");
         newTool.setType("Revolver");
@@ -87,6 +116,7 @@ public class Detective {
         String toolInfo = newTool.toString();
         System.out.println(toolInfo);
         
+        // location
         Location newLocation = new Location();
         newLocation.setVisited("Visited");
         newLocation.setRow(4.0);
