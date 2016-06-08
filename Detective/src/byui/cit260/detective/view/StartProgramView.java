@@ -6,7 +6,7 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
-import cit260.byui.detective.model.Player;
+import byui.cit260.detective.model.Player;
 import java.util.Scanner;
 
 /**

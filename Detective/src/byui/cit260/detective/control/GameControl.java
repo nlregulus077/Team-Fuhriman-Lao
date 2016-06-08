@@ -5,7 +5,7 @@
  */
 package byui.cit260.detective.control;
 
-import cit260.byui.detective.model.Player;
+import byui.cit260.detective.model.Player;
 import detective.Detective;
 
 /**

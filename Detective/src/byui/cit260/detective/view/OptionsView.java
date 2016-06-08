@@ -5,49 +5,45 @@
  */
 package byui.cit260.detective.view;
 
-import byui.cit260.detective.control.GameControl;
-import detective.Detective;
 import java.util.Scanner;
+
+
 
 /**
  *
- * @author Nina
+ * @author Logan
  */
-public class MainMenuView {
+public class OptionsView {
     
-    private String menu;
+     private String menu;
     private String promptMessage;
 
-    public MainMenuView() {
-        this.promptMessage = "\nWhat will you do?";
+    public OptionsView() {
+        this.promptMessage = "\nChoose an option";
         this.menu = "\n"
                   + "\n ---------------------------------------------------"
-                  + "\n | Main Menu                                       |"
+                  + "\n | Options                                  |"
                   + "\n ---------------------------------------------------"
-                  + "\nS - Start New Game"
-                  + "\nL - Load File"
-                  + "\nO - Options"
-                  + "\nF - Fundamentals"
-                  + "\nC - Credits"
-                  + "\nQ - Quit"
+                  + "\nD - Difficulty (1-5) = [Default 1]"
+                  + "\nH - Hint = [Default off]"
+                  + "\nM - Map = [Default on]"
+                  + "\nE - Exit options menu"
+                  + "\nC - Clear all saved data"
                   + "\n----------------------------------------------------";
     }
-
-   
-
-    void displayMainMenuView() {
+    
+    void displayOptionsView() {
         
         boolean done = false;
         do {
             System.out.println(this.menu);
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("E"))
                 return;
             
             done = this.doAction(menuOption);
         } while (!done);
-        
-    }
+}
 
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
@@ -76,20 +72,20 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "S":
-                this.StartNewGame();
+            case "D":
+                this.Difficulty();
                 break;
-            case "L":
-                this.LoadFile();
+            case "H":
+                this.Hints();
                 break;
-            case "O":
-                this.Options();
+            case "M":
+                this.Map();
+                break;
+            case "E":
+                this.ExitMenu();
                 break;
             case "C":
-                this.Credits();
-                break;
-            case "F":
-                this.Fundamentals();
+                this.ClearData();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -99,30 +95,25 @@ public class MainMenuView {
         
         return false;
     }
-
-    private void StartNewGame() {
-        GameControl.createNewGame(Detective.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-
-    private void LoadFile() {
-        System.out.println("\n*** LoadFile() called ***");
-    }
-
-    private void Options() {
-         OptionsView optionsMenu = new OptionsView();
-         optionsMenu.displayOptionsView();
-    }
-
-    private void Credits() {
-        System.out.println("\n*** Credits() called ***");
-    }
-
-    private void Fundamentals() {
-        FundamentalsView fundamentalsMenu = new FundamentalsView();
-        fundamentalsMenu.displayFundamentalView();
-    }
     
+
+    private void Difficulty() {
+        System.out.println("\n*** Difficulty() called ***");
+    }
+
+    private void Hints() {
+        System.out.println("\n*** Hints() called ***");
+    }
+
+    private void Map() {
+        System.out.println("\n*** Map() called ***");
+    }
+
+    private void ExitMenu() {
+        System.out.println("\n*** ExitMenu() called ***");
+    }
+
+    private void ClearData() {
+        System.out.println("\n*** ClearData() called ***");
+    }
 }

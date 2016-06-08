@@ -17,7 +17,8 @@ public class Location implements Serializable {
     private String visited;
     private double row;
     private double column;
-
+    private long requirment;
+    
     public Location() {
     }
     
@@ -46,6 +47,16 @@ public class Location implements Serializable {
     public void setColumn(double column) {
         this.column = column;
     }
+
+    public long getRequirment() {
+        return requirment;
+    }
+
+    public void setRequirment(long requirment) {
+        this.requirment = requirment;
+    }
+    
+    
 
     @Override
     public int hashCode() {

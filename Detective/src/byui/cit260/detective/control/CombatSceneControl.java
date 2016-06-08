@@ -11,7 +11,7 @@ package byui.cit260.detective.control;
  */
 public class CombatSceneControl {
     
-    public int calcMeetComabatSkillRequirements(long combatSkill, long combatRequirement) {
+    public int calcMeetCombatSkillRequirements(long combatSkill, long combatRequirement) {
         
         if (combatSkill < 0 || combatSkill > 10) {
             return -1;

@@ -21,7 +21,7 @@ public class CombatSceneControlTest {
      * Test of calcMeetComabatSkillRequirements method, of class CombatSceneControl.
      */
     @Test
-    public void testCalcMeetComabatSkillRequirements() {
+    public void testCalcMeetCombatSkillRequirements() {
         
         //Test Case 1
         System.out.println("Test Case 1");
@@ -29,7 +29,7 @@ public class CombatSceneControlTest {
         long combatRequirement = 5;
         CombatSceneControl instance = new CombatSceneControl();
         int expResult = 0;
-        int result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        int result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
          //Test Case 2
@@ -37,7 +37,7 @@ public class CombatSceneControlTest {
         combatSkill = 8;
         combatRequirement = 5;
         expResult = 1;
-        result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
          //Test Case 3
@@ -45,7 +45,7 @@ public class CombatSceneControlTest {
         combatSkill = -8;
         combatRequirement = 5;
         expResult = -1;
-        result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
          //Test Case 4
@@ -53,7 +53,7 @@ public class CombatSceneControlTest {
         combatSkill =11;
         combatRequirement = 5;
         expResult = -1;
-        result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
          //Test Case 5
@@ -61,7 +61,7 @@ public class CombatSceneControlTest {
         combatSkill = 0;
         combatRequirement = 5;
         expResult = 0;
-        result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
          //Test Case 6
@@ -69,7 +69,7 @@ public class CombatSceneControlTest {
         combatSkill = 10;
         combatRequirement = 5;
         expResult = 1;
-        result = instance.calcMeetComabatSkillRequirements(combatSkill, combatRequirement);
+        result = instance.calcMeetCombatSkillRequirements(combatSkill, combatRequirement);
         assertEquals(expResult, result);
         
     }

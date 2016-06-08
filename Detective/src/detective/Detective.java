@@ -10,12 +10,12 @@ import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Tool;
 import byui.cit260.detective.view.StartProgramView;
-import cit260.byui.detective.model.Player;
-import cit260.byui.detective.model.Character;
-import cit260.byui.detective.model.CombatScene;
-import cit260.byui.detective.model.CunningScene;
-import cit260.byui.detective.model.IntelligenceScene;
-import cit260.byui.detective.model.Scene;
+import byui.cit260.detective.model.Player;
+import byui.cit260.detective.model.Character;
+import byui.cit260.detective.model.CombatScene;
+import byui.cit260.detective.model.CunningScene;
+import byui.cit260.detective.model.IntelligenceScene;
+import byui.cit260.detective.model.Scene;
 /**
  *
  * @author Nina
