@@ -31,4 +31,8 @@ public class GameControl {
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame() stub function called ***");
     }
+
+    public static void saveSkills() {
+        System.out.println("\n*** saveSkills() stub function called***");
+    }
 }

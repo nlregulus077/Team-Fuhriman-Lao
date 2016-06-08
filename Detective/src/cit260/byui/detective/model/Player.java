@@ -16,9 +16,9 @@ public class Player implements Serializable
 {
     // class instance variables
     private String name;
-    private double intelligenceSkill;
-    private double combatSkill;
-    private double cunningSkill;
+    private long intelligenceSkill;
+    private long combatSkill;
+    private long cunningSkill;
     
 
     public Player() {
@@ -36,7 +36,7 @@ public class Player implements Serializable
         return intelligenceSkill;
     }
 
-    public void setIntelligenceSkill(double intelligenceSkill) {
+    public void setIntelligenceSkill(long intelligenceSkill) {
         this.intelligenceSkill = intelligenceSkill;
     }
 
@@ -44,7 +44,7 @@ public class Player implements Serializable
         return combatSkill;
     }
 
-    public void setCombatSkill(double combatSkill) {
+    public void setCombatSkill(long combatSkill) {
         this.combatSkill = combatSkill;
     }
 
@@ -52,7 +52,7 @@ public class Player implements Serializable
         return cunningSkill;
     }
 
-    public void setCunningSkill(double cunningSkill) {
+    public void setCunningSkill(long cunningSkill) {
         this.cunningSkill = cunningSkill;
     }
 

@@ -101,6 +101,10 @@ public class MainMenuView {
     }
 
     private void StartNewGame() {
+        SkillView skillView = new SkillView();
+        skillView.displaySkillView();
+        
+        GameControl.saveSkills();
         GameControl.createNewGame(Detective.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
