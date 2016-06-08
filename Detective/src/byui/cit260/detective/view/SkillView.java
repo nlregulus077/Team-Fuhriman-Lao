@@ -6,7 +6,7 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
-import cit260.byui.detective.model.Player;
+import byui.cit260.detective.model.Player;
 import java.util.Scanner;
 
 /**
@@ -22,8 +22,8 @@ public class SkillView {
     
 
     public SkillView() {
-        this.promptMessage = "Assign 10 skill points to the following values."
-                + "\n Enter intelligence: ";
+        this.promptMessage = "Assign 10 skill points to the following values." + "\nEnter Intelligence Skill: ";
+        this.intelPrompt = "Enter Intelligence Skill: ";
         this.cunningPrompt = "Enter Cunning Skill: " ;
         this.combatPrompt = "Enter Combat Skill: ";
     }
@@ -49,7 +49,7 @@ public class SkillView {
         
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
-            
+            this.promptMessage = this.intelPrompt;
             value = keyboard.nextLine();
             value = value.trim();
             
@@ -79,18 +79,41 @@ public class SkillView {
          assign cunning skill to player
          */
          
+         
+         String playerIntelligenceSkill = playerIntelSkill;
+         long intelligenceSkillValue = Long.parseLong(playerIntelligenceSkill);
+         
          this.promptMessage = this.cunningPrompt;
          
          String playerCunningSkill = this.getSkillInput();
+         long cunningSkillValue = Long.parseLong(playerCunningSkill);
          
          
          this.promptMessage = this.combatPrompt;
         
          String playerCombatSkill = this.getSkillInput();
+         long combatSkillValue = Long.parseLong(playerCombatSkill);
          
-     
+         
+      if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) > 10) {
+          System.out.println("You have more than 10 skill points.  Please reassign." + "\n");
+          return false;
+      }
+      
+      else if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) <= 0) {
+          System.out.println("Invalid values.  Please reassign." + "\n");
+          return false;
+      }
+      
+      else if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) < 10) {
+          System.out.println("You still have leftover points. Please reassign." + "\n");
+          return false;
+      }
+      
+      else {
+          return true;
+      }
         
-        return true;
-}
+     }
      
 }
