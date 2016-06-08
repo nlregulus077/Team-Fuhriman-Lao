@@ -19,7 +19,8 @@ public class StartProgramView {
 
     public StartProgramView() {
         
-        this.promptMessage = "\nPlease enter your name: ";
+        this.promptMessage = "\nYou have a vague memory of your name since waking up in the ransacked apartment." 
+                + "\nWhat is it?";
         // display the banner when the view is created
         this.displayBanner();
     }
@@ -28,6 +29,8 @@ public class StartProgramView {
        
         System.out.println(
         "\n************************************************************************"
+        + "\n*                                                                      *"
+        + "\n* Welcome to Detective!                                                *"
         + "\n*                                                                      *"
         + "\n* In this game you will be taking the role of a private detective. You *"
         + "\n* find yourself in a ransacked apartment.  You have no memory of who   *"
@@ -104,7 +107,7 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         System.out.println("\n===================================================="
                          + "\n Welcome to the game " + player.getName() 
-                         + "\n We hope you have a lot of fun!"
+                         + "\n Good Luck!"
                          + "\n====================================================");
         
         MainMenuView mainMenuView = new MainMenuView();

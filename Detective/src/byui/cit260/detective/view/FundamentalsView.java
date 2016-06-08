@@ -17,7 +17,7 @@ public class FundamentalsView {
     private String promptMessage;
 
     public FundamentalsView() {
-        this.promptMessage = "\nWhat will you do?";
+        this.promptMessage = "\nWhat do you need help with?";
         this.menu = "\n"
                   + "\n ---------------------------------------------------"
                   + "\n | Fundamentals                                    |"
