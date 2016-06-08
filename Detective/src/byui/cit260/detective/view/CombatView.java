@@ -18,7 +18,7 @@ public class CombatView {
     private boolean skill;
 
     public CombatView() {
-        this.promptMessage = "/n Please enter yout combat skill";
+        this.promptMessage = "\n Please enter your combat skill";
     }
     
     
@@ -62,7 +62,18 @@ public class CombatView {
     private boolean doAction(String combatSkill) {
         // Call control function do combat
        CombatSceneControl combatScene = new CombatSceneControl();
-       combatScene.calcMeetCombatSkillRequirements(4,4);
+       int fight = combatScene.calcMeetCombatSkillRequirements(2,4);
+       
+       if (fight == 1){
+           System.out.println ("\nYou win!!!");
+       }
+       else if (fight == 0) {
+           System.out.println("\nYou are dead :(");
+       }
+       else if (fight == -1){
+           System.out.println("\nPlease enter another number");
+       }
+       
     
         return true; 
 }
