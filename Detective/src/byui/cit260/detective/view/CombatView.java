@@ -24,7 +24,7 @@ public class CombatView {
     
     
     
-    void displayComabtView() {
+    void displayCombatView() {
         
         boolean done = false;
         do {

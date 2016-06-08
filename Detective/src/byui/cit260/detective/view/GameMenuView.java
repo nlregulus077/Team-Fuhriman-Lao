@@ -126,7 +126,8 @@ public class GameMenuView {
     }
 
     private void enterCombat() {
-        System.out.println("\n*** enterCombat() stub function called ***");
+        CombatView combatView = new CombatView();
+        combatView.displayCombatView();
     }
 
     private void viewMap() {
