@@ -1,5 +1,5 @@
 /*
- * I don't recommend implementing inheritance here.
+ * The get input function here is quite different. I don't recommend implementing inheritance here.
  */
 package byui.cit260.detective.view;
 

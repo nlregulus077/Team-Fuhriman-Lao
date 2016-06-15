@@ -11,68 +11,31 @@ import java.util.Scanner;
  *
  * @author Nina
  */
-public class FundamentalsView {
+public class FundamentalsView extends View {
     
-    private String menu;
-    private String promptMessage;
 
     public FundamentalsView() {
-        this.promptMessage = "\nWhat do you need help with?";
-        this.menu = "\n"
+        super ("\n"
                   + "\n ---------------------------------------------------"
                   + "\n | Fundamentals                                    |"
                   + "\n ---------------------------------------------------"
-                  + "\nW - What is the goal of the game"
-                  + "\nM - How to Move"
-                  + "\nTAKE - Collect an object from where you are"
-                  + "\nU - Use an item"
-                  + "\nI - Look at your inventory"
-                  + "\nN - Look over your notes"
-                  + "\nE - Use an equipment"
-                  + "\nC - View clues"
-                  + "\nO - Search for clues"
-                  + "\nTALK - Talk to someone around you"
-                  + "\nFIGHT - Enter combat mode"
-                  + "\n----------------------------------------------------";
+                  + "\n\tW - What is the goal of the game"
+                  + "\n\tM - How to Move"
+                  + "\n\tTAKE - Collect an object from where you are"
+                  + "\n\tU - Use an item"
+                  + "\n\tI - Look at your inventory"
+                  + "\n\tN - Look over your notes"
+                  + "\n\tE - Use an equipment"
+                  + "\n\tC - View clues"
+                  + "\n\tO - Search for clues"
+                  + "\n\tTALK - Talk to someone around you"
+                  + "\n\tFIGHT - Enter combat mode"
+                  + "\n----------------------------------------------------" 
+        + "\n\nWhat do you need help with? (Just type Q to exit)");
     }
     
-    void displayFundamentalView() {
-        
-        boolean done = false;
-        do {
-            System.out.println(this.menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-    
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         

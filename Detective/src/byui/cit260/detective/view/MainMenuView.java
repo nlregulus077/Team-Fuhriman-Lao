@@ -21,12 +21,12 @@ public class MainMenuView extends View {
                   + "\n ---------------------------------------------------"
                   + "\n | Main Menu                                       |"
                   + "\n ---------------------------------------------------"
-                  + "\nS - Start New Game"
-                  + "\nL - Load File"
-                  + "\nO - Options"
-                  + "\nF - Fundamentals"
-                  + "\nC - Credits"
-                  + "\nQ - Quit"
+                  + "\n\tS - Start New Game"
+                  + "\n\tL - Load File"
+                  + "\n\tO - Options"
+                  + "\n\tF - Fundamentals"
+                  + "\n\tC - Credits"
+                  + "\n\tQ - Quit"
                   + "\n----------------------------------------------------" +
                 "\n\nWhat will you do?");
     }
@@ -74,7 +74,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(Detective.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void LoadFile() {
@@ -83,7 +83,7 @@ public class MainMenuView extends View {
 
     private void Options() {
          OptionsView optionsMenu = new OptionsView();
-         optionsMenu.displayOptionsView();
+         optionsMenu.display();
     }
 
     private void Credits() {
@@ -92,7 +92,7 @@ public class MainMenuView extends View {
 
     private void Fundamentals() {
         FundamentalsView fundamentalsMenu = new FundamentalsView();
-        fundamentalsMenu.displayFundamentalView();
+        fundamentalsMenu.display();
     }
     
 }

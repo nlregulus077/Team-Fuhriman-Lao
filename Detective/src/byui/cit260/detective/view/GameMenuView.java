@@ -11,14 +11,11 @@ import java.util.Scanner;
  *
  * @author Nina
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    private String menu;
-    private String promptAction;
 
     public GameMenuView() {
-        this.promptAction = "\nWhat will you do?";
-        this.menu = "\n"
+        super ("\n"
                   + "\n---------------------------------------------------"
                   + "\n Actions                                          |"
                   + "\n---------------------------------------------------"
@@ -30,47 +27,13 @@ public class GameMenuView {
                   + "\n\tTALK - Talk to a person"
                   + "\n\tFIGHT - Enter combat mode"
                   + "\n\tQ - Quit"
-                  + "\n---------------------------------------------------"
+                  + "\n---------------------------------------------------" +
+                "\n\nWhat will you do?")
                 ;
     }
     
-    
-    
-    void displayMenu(){
-        boolean done = false;
-        do {
-            System.out.println(this.menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptAction);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-    
-     private boolean doAction(String choice) {
+    @Override
+     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
@@ -127,7 +90,7 @@ public class GameMenuView {
 
     private void enterCombat() {
         CombatView combatView = new CombatView();
-        combatView.displayCombatView();
+        combatView.display();
     }
 
     private void viewMap() {

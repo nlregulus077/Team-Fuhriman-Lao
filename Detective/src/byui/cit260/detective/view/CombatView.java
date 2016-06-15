@@ -12,54 +12,20 @@ import java.util.Scanner;
  *
  * @author Logan
  */
-public class CombatView {
+public class CombatView extends View {
 
     private String promptMessage;
     private boolean skill;
 
     public CombatView() {
-        this.promptMessage = "\n Please enter your combat skill";
+        super("\n Please enter your combat skill");
     }
     
     
     
     
-    void displayCombatView() {
-        
-        boolean done = false;
-        do {
-            
-            String combatSkill = this.getComabtSkill();
-            if (combatSkill.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(combatSkill);
-        } while (!done);
-}
-
-    private String getComabtSkill() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-
-    private boolean doAction(String combatSkill) {
+    @Override
+    public boolean doAction(String combatSkill) {
         // Call control function do combat
        CombatSceneControl combatScene = new CombatSceneControl();
        int fight = combatScene.calcMeetCombatSkillRequirements(2,4);
