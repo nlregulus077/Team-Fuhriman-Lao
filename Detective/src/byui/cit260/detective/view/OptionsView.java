@@ -13,14 +13,13 @@ import java.util.Scanner;
  *
  * @author Logan
  */
-public class OptionsView {
+public class OptionsView extends View {
     
      private String menu;
     private String promptMessage;
 
     public OptionsView() {
-        this.promptMessage = "\nChoose an option";
-        this.menu = "\n"
+             super("\n"
                   + "\n ---------------------------------------------------"
                   + "\n | Options                                  |"
                   + "\n ---------------------------------------------------"
@@ -29,45 +28,12 @@ public class OptionsView {
                   + "\nM - Map = [Default on]"
                   + "\nE - Exit options menu"
                   + "\nC - Clear all saved data"
-                  + "\n----------------------------------------------------";
+                  + "\n----------------------------------------------------");
     }
     
-    void displayOptionsView() {
-        
-        boolean done = false;
-        do {
-            System.out.println(this.menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-}
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    
+    @Override
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         

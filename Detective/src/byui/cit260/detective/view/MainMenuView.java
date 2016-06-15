@@ -117,7 +117,7 @@ public class MainMenuView {
 
     private void Options() {
          OptionsView optionsMenu = new OptionsView();
-         optionsMenu.displayOptionsView();
+         optionsMenu.display();
     }
 
     private void Credits() {

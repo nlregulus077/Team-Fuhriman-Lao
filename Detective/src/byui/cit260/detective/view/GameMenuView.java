@@ -127,7 +127,7 @@ public class GameMenuView {
 
     private void enterCombat() {
         CombatView combatView = new CombatView();
-        combatView.displayCombatView();
+        combatView.display();
     }
 
     private void viewMap() {
