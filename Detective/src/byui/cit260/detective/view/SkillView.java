@@ -70,9 +70,7 @@ public class SkillView {
      
      private boolean doAction(String playerIntelSkill) {
          /*
-         prompt for combat skill
-         
-         
+         prompt for combat skill 
          prompt for cunning skill
          assign intel skill to player
          assign combat skill to player

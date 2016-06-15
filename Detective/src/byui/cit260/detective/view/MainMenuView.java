@@ -13,14 +13,11 @@ import java.util.Scanner;
  *
  * @author Nina
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private String menu;
-    private String promptMessage;
 
     public MainMenuView() {
-        this.promptMessage = "\nWhat will you do?";
-        this.menu = "\n"
+        super ("\n"
                   + "\n ---------------------------------------------------"
                   + "\n | Main Menu                                       |"
                   + "\n ---------------------------------------------------"
@@ -30,48 +27,17 @@ public class MainMenuView {
                   + "\nF - Fundamentals"
                   + "\nC - Credits"
                   + "\nQ - Quit"
-                  + "\n----------------------------------------------------";
+                  + "\n----------------------------------------------------" +
+                "\nWhat will you do?");
     }
 
    
 
-    void displayMainMenuView() {
-        
-        boolean done = false;
-        do {
-            System.out.println(this.menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-        
-    }
+   
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+   
+    @Override
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
