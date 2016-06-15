@@ -28,7 +28,7 @@ public class MainMenuView extends View {
                   + "\nC - Credits"
                   + "\nQ - Quit"
                   + "\n----------------------------------------------------" +
-                "\nWhat will you do?");
+                "\n\nWhat will you do?");
     }
 
    
