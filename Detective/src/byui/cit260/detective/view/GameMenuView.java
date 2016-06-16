@@ -20,7 +20,6 @@ public class GameMenuView extends View {
                   + "\n Actions                                          |"
                   + "\n---------------------------------------------------"
                   + "\n\tO - Observe"
-                  + "\n\tU - Use an item"
                   + "\n\tI - Inventory"
                   + "\n\tM - View the Map"
                   + "\n\tTAKE - Take an item"
@@ -40,9 +39,6 @@ public class GameMenuView extends View {
         switch (choice) {
             case "O":
                 this.observeArea();
-                break;
-            case "U":
-                this.useItem();
                 break;
             case "I":
                 this.viewInventory();
@@ -70,10 +66,6 @@ public class GameMenuView extends View {
 
     private void observeArea() {
         System.out.println("\n*** observeArea() stub function called ***");
-    }
-
-    private void useItem() {
-        System.out.println("\n*** useItem() stub function called ***");
     }
 
     private void viewInventory() {
