@@ -77,7 +77,8 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        System.out.println("\n*** viewInventory() stub function called ***");
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 
     private void takeItem() {
