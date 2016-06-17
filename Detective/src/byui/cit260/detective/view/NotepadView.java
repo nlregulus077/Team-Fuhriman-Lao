@@ -31,7 +31,7 @@ public class NotepadView extends View {
             case "V":
                 this.viewNotes();
                 break;
-            case "K":
+            case "A":
                 this.addNotes();
                 break;
             default:
@@ -47,6 +47,7 @@ public class NotepadView extends View {
     }
 
     private void addNotes() {
-        System.out.println("*** addNotes() stub function called. ***");
+        NotepadNotesView addedNotes = new NotepadNotesView();
+        addedNotes.display();
     }
 }

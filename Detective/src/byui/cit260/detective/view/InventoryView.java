@@ -28,7 +28,8 @@ public class InventoryView extends View {
                   + "\nA- First Aid Kit"
                   + "\nCLUE- Clue"
                   + "\nQ- Quit"
-                  + "\n----------------------------------------------------");
+                  + "\n----------------------------------------------------" + 
+                     "\n\nWhich one do you need?");
     }
     
      @Override
@@ -78,7 +79,8 @@ public class InventoryView extends View {
     }
 
     private void useNotepad() {
-        System.out.println("\n*** useNotepad() called ***");
+        NotepadView notepadView = new NotepadView();
+        notepadView.display();
     }
 
     private void useFlashlight() {
