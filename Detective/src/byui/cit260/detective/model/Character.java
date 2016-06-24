@@ -12,91 +12,30 @@ import java.util.Objects;
  *
  * @author Nina
  */
-public class Character implements Serializable {
+public enum Character implements Serializable {
     
-    private String name;
-    private String description;
-    private String dialogue;
-    private String location;
-
-    public Character() {
-    }
+    Jane("Hello. What can I get for you?"),
+    Jack("Hello."),
+    Blake(".......");
     
+    
+    private final String dialogue;
+    private final Point location;
 
-    public String getName() {
-        return name;
+    Character(String dialogue) {
+        this.dialogue = dialogue;
+        location = New Point(1,1);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+   
 
     public String getDialogue() {
         return dialogue;
     }
 
-    public void setDialogue(String dialogue) {
-        this.dialogue = dialogue;
-    }
+    
 
     public String getLocation() {
         return location;
     }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + Objects.hashCode(this.description);
-        hash = 17 * hash + Objects.hashCode(this.dialogue);
-        hash = 17 * hash + Objects.hashCode(this.location);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.dialogue, other.dialogue)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        return true;
-        
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", dialogue=" + dialogue + ", location=" + location + '}';
-    }
-    
-    
 }

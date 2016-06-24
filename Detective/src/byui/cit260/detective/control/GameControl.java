@@ -5,7 +5,10 @@
  */
 package byui.cit260.detective.control;
 
+import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Player;
+import byui.cit260.detective.model.Tool;
 import detective.Detective;
 
 /**
@@ -29,7 +32,19 @@ public class GameControl {
     }
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame() stub function called ***");
+       Game game = new Game();
+       Detective.setCurrentGame(game);
+       
+       game.setPlayer(player);
+       
+       Tool[] toolList = GameControl.createTool();
+       game.setToolList(toolList);
+       
+       Map map = MapControl.createMap();
+       game.setMap(map);
+       
+       MapControl.moveActorsToStartingLocation(map);
+       
     }
 
     public static void saveSkills() {

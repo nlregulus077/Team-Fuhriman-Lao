@@ -13,10 +13,23 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     
-    
+    private Player player;
     private double highScore; 
+    private Map map;
+    private Tool[] toolList;
+
+   
 
     public Game() {
+        
+    }
+    
+     public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     
     public double getHighScore() {
@@ -26,7 +39,23 @@ public class Game implements Serializable {
     public void setHighScore(double highScore) {
         this.highScore = highScore;
     }
+    
+     public Tool[] getToolList() {
+        return toolList;
+    }
 
+    public void setToolList(Tool[] toolList) {
+        this.toolList = toolList;
+    }
+    
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;

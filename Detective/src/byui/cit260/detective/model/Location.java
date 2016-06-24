@@ -17,7 +17,9 @@ public class Location implements Serializable {
     private String visited;
     private double row;
     private double column;
-    private long requirment;
+    private long requirement;
+    
+    
     
     public Location() {
     }
@@ -49,11 +51,11 @@ public class Location implements Serializable {
     }
 
     public long getRequirment() {
-        return requirment;
+        return requirement;
     }
 
     public void setRequirment(long requirment) {
-        this.requirment = requirment;
+        this.requirement = requirment;
     }
     
     
