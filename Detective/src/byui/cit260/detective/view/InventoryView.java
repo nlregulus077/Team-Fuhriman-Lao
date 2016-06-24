@@ -11,7 +11,7 @@ package byui.cit260.detective.view;
  */
 public class InventoryView extends View {
     
-     private String menu;
+    private String menu;
     private String promptMessage;
 
     public InventoryView() {

@@ -20,11 +20,11 @@ public enum Character implements Serializable {
     
     
     private final String dialogue;
-    private final Point location;
+    private final Location location;
 
     Character(String dialogue) {
         this.dialogue = dialogue;
-        location = New Point(1,1);
+        location = new Location();
     }
 
    
@@ -35,7 +35,7 @@ public enum Character implements Serializable {
 
     
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 }

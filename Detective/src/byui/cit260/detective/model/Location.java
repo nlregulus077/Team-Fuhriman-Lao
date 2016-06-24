@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Location implements Serializable {
     
     private String visited;
-    private double row;
-    private double column;
+    private int row;
+    private int column;
     private long requirement;
     private Scene scene; 
     private Enum<Character> character; 
@@ -26,7 +26,21 @@ public class Location implements Serializable {
     public Location() {
     }
     
-    
+     public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
 
     public String getVisited() {
         return visited;
@@ -36,21 +50,6 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public double getRow() {
-        return row;
-    }
-
-    public void setRow(double row) {
-        this.row = row;
-    }
-
-    public double getColumn() {
-        return column;
-    }
-
-    public void setColumn(double column) {
-        this.column = column;
-    }
 
     public long getRequirment() {
         return requirement;
@@ -66,8 +65,6 @@ public class Location implements Serializable {
     public int hashCode() {
         int hash = 5;
         hash = 97 * hash + Objects.hashCode(this.visited);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
         return hash;
     }
 
@@ -83,21 +80,13 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        return true;
+       
+        return Objects.equals(this.visited, other.visited);
     }
 
     @Override
     public String toString() {
-        return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + '}';
+        return "Location{" + "visited=" + visited + '}';
     }
 
     void setVisited(boolean b) {

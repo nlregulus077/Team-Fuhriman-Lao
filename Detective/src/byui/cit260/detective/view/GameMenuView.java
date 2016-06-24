@@ -5,6 +5,9 @@
  */
 package byui.cit260.detective.view;
 
+import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Tool;
+import detective.Detective;
 import java.util.Scanner;
 
 /**
@@ -69,8 +72,23 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        InventoryView inventoryView = new InventoryView();
-        inventoryView.display();
+        StringBuilder line;
+        
+        Game game = Detective.getCurrentGame();
+        Tool[] tool = game.getToolList();
+        
+        System.out.println("\n      Inventory");
+        line = new StringBuilder("                          ");
+        line.insert(0, "Description");
+        System.out.println(line.toString());
+        
+        for (Tool item: tool) {
+            line = new StringBuilder("                           ");
+            line.insert(0, item.getDescription());
+            
+            System.out.println(line.toString());
+        }
+        
     }
 
     private void takeItem() {
@@ -87,6 +105,25 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-         System.out.println("\n*** viewMap() stub function called ***");
+         /*
+        BEGIN
+            get the map locations from the current game
+            DISPLAY title
+            DISPLAY row of column numbers
+            FOR every row in map
+             DISPLAY row divider
+             DISPLAY row number
+                FOR every column in row
+                DISPLAY column divider
+                location = locations[row][column]
+                IF location has been visited
+                DISPLAY the map symbol for location
+                ELSE
+                DISPLAY " ?? "
+                ENDIF
+                 DISPLAY ending column divider
+                 ENDFOR
+                DISPLAY ending row divider 
+        */
     }
 }
