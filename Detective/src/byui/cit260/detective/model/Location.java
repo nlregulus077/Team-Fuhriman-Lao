@@ -18,6 +18,8 @@ public class Location implements Serializable {
     private double row;
     private double column;
     private long requirement;
+    private Scene scene; 
+    private Enum<Character> character; 
     
     
     
@@ -96,6 +98,14 @@ public class Location implements Serializable {
     @Override
     public String toString() {
         return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + '}';
+    }
+
+    void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -8,6 +8,7 @@ package byui.cit260.detective.control;
 import byui.cit260.detective.model.Game;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Player;
+import byui.cit260.detective.model.Scene;
 import byui.cit260.detective.model.Tool;
 import detective.Detective;
 
@@ -49,5 +50,13 @@ public class GameControl {
 
     public static void saveSkills() {
         System.out.println("\n*** saveSkills() stub function called***");
+    }
+
+    private static Tool[] createTool() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
