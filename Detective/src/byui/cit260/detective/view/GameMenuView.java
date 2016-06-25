@@ -126,11 +126,11 @@ public class GameMenuView extends View {
                 DISPLAY ending row divider 
         */
          
-         for (int row = 0; row < row.length - 1; row++) {
-             for (int column = 0; column < column.length - 1; column++){
+        // for (int row = 0; row < row.length - 1; row++) {
+             //for (int column = 0; column < column.length - 1; column++){
                  
-             }
+          //   }
                  
-         }
+        // }
     }
 }
