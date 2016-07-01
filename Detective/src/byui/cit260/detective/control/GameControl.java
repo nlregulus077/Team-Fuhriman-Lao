@@ -6,6 +6,7 @@
 package byui.cit260.detective.control;
 
 import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Player;
 import byui.cit260.detective.model.Scene;
@@ -38,7 +39,7 @@ public class GameControl {
        
        game.setPlayer(player);
        
-       Tool[] toolList = GameControl.createTool();
+       Tool[] toolList = GameControl.createToolList();
        game.setToolList(toolList);
        
        Map map = MapControl.createMap();
@@ -52,11 +53,42 @@ public class GameControl {
         System.out.println("\n*** saveSkills() stub function called***");
     }
 
-    private static Tool[] createTool() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Tool[] createToolList() {
+    
+        Tool[] tools = 
+        new Tool[7];
+        
+        Tool gun = new Tool();
+        gun.setDescription("Gun");
+        tools[Tool.item.gun.ordinal()] = gun; 
+        
+        Tool knife = new Tool();
+        knife.setDescription("Knife");
+        tools[Tool.item.knife.ordinal()] = knife; 
+        
+        Tool notepad = new Tool();
+        notepad.setDescription("Notepad");
+        tools[Tool.item.notepad.ordinal()] = notepad; 
+        
+        
+        Tool flashlight = new Tool();
+        flashlight.setDescription("Flashlight");
+        tools[Tool.item.flashlight.ordinal()] = flashlight; 
+        
+        Tool badge = new Tool();
+        badge.setDescription("Badge");
+        tools[Tool.item.badge.ordinal()] = badge; 
+        
+        Tool crowbar = new Tool();
+        crowbar.setDescription("Crowbar");
+        tools[Tool.item.crowbar.ordinal()] = crowbar; 
+        
+        Tool firstAidKit = new Tool();
+        firstAidKit.setDescription("First Aid Kit");
+        tools[Tool.item.firstAidKit.ordinal()] = firstAidKit; 
+        
+        return tools; 
     }
-
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        
+    
 }

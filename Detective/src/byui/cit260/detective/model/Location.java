@@ -14,12 +14,12 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     
-    private String visited;
+    private boolean visited;
     private int row;
     private int column;
     private long requirement;
     private Scene scene; 
-    private Enum<Character> character; 
+    private Character character; 
     
     
     
@@ -42,12 +42,28 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean isVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public long getRequirement() {
+        return requirement;
+    }
+
+    public void setRequirement(long requirement) {
+        this.requirement = requirement;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 
 
@@ -55,8 +71,8 @@ public class Location implements Serializable {
         return requirement;
     }
 
-    public void setRequirment(long requirment) {
-        this.requirement = requirment;
+    public void setRequirment(long requirement) {
+        this.requirement = requirement;
     }
     
     
@@ -89,12 +105,9 @@ public class Location implements Serializable {
         return "Location{" + "visited=" + visited + '}';
     }
 
-    void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setScene() ***");
     }
     
     

@@ -107,56 +107,7 @@ public class Tool implements Serializable {
     
     }
     
-    public static Tool[] createToolList() {
     
-        Tool[] tool = 
-        new Tool[7];
-        
-        Tool gun = new Tool();
-        gun.setDescription("Gun");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.gun.ordinal()] = gun; 
-        
-        Tool knife = new Tool();
-        gun.setDescription("Knife");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.knife.ordinal()] = knife; 
-        
-        Tool notepad = new Tool();
-        gun.setDescription("Notepad");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.notepad.ordinal()] = notepad; 
-        
-        
-        Tool flashlight = new Tool();
-        gun.setDescription("Flashlight");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.flashlight.ordinal()] = flashlight; 
-        
-        Tool badge = new Tool();
-        gun.setDescription("Badge");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.badge.ordinal()] = badge; 
-        
-        Tool crowbar = new Tool();
-        gun.setDescription("Crowbar");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.crowbar.ordinal()] = crowbar; 
-        
-        Tool firstAidKit = new Tool();
-        gun.setDescription("First Aid Kit");
-        gun.setQuantityInStock(1);
-        gun.setRequiredAmount(1);
-        tool[item.firstAidKit.ordinal()] = firstAidKit; 
-        
-        return tool; 
-    }
 }
     
 

@@ -5,7 +5,10 @@
  */
 package byui.cit260.detective.view;
 
+import static byui.cit260.detective.model.Character.Player_Detective;
 import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Location;
+import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Tool;
 import detective.Detective;
 import java.util.Scanner;
@@ -126,11 +129,34 @@ public class GameMenuView extends View {
                 DISPLAY ending row divider 
         */
          
-        // for (int row = 0; row < row.length - 1; row++) {
-             //for (int column = 0; column < column.length - 1; column++){
-                 
-          //   }
-                 
-        // }
-    }
+        Map gameMap = Detective.getCurrentGame().getMap();
+        Location[][] locations = gameMap.getLocations();
+        
+        System.out.println("\n------------------------------------------" 
+                          + "\n Undercity Map"
+                          + "\n------------------------------------------"); 
+        
+        int numCol = gameMap.getColumnCount();
+        int numRow = gameMap.getRowCount();
+        
+        System.out.println("    1     2     3     4     5");
+        for (int row = 0; row < numRow; row++) {
+            System.out.println(" --------------------------------");
+            System.out.print((row + 1) + " ");
+            for (int col = 0; col < numCol; col++) {
+           
+                
+                    System.out.print("|");
+                    System.out.print("  x  ");
+               
+            }
+                
+                System.out.print("|\n");
+            }
+        System.out.println(" --------------------------------");
+            
+        }
+        
+         
 }
+    

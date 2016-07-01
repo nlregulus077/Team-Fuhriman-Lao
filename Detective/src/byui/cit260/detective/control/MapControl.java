@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package byui.cit260.detective.control;
-
+import byui.cit260.detective.model.Character;
 import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Scene;
+import byui.cit260.detective.control.MapControl;
+
 
 /**
  *
@@ -17,7 +19,36 @@ class MapControl {
 
 
     static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // move characters to point
+        // assign character to location
+        
+        Location[][] locations = detective.Detective.getCurrentGame().getMap().getLocations();
+        
+        Character.Player_Detective.getLocation().x = 0;
+        Character.Player_Detective.getLocation().y = 0;
+        
+        Character.Blake.getLocation().x = 2;
+        Character.Blake.getLocation().y = 3;
+        
+        Character.Jack.getLocation().x = 1;
+        Character.Jack.getLocation().y = 3;
+        
+        Character.Jane.getLocation().x = 3;
+        Character.Jane.getLocation().y = 2;
+        
+        Character.Claire.getLocation().x = 3;
+        Character.Claire.getLocation().y = 3;
+        
+        Character.Thug.getLocation().x = 1;
+        Character.Thug.getLocation().y = 2;
+        
+        locations[0][0].setCharacter(Character.Player_Detective);
+        locations[2][3].setCharacter(Character.Blake);
+        locations[1][3].setCharacter(Character.Jack);
+        locations[3][2].setCharacter(Character.Jane);
+        locations[3][3].setCharacter(Character.Claire);
+        locations[1][2].setCharacter(Character.Thug);
+        
     }
     
     static Map createMap () {
@@ -26,7 +57,7 @@ class MapControl {
         
         Scene[] scenes = createScenes(); 
         
-        GameControl.assignScenesToLocations(map, scenes);
+        MapControl.assignScenesToLocations(map, scenes);
         
         return map; 
 }
@@ -43,7 +74,6 @@ class MapControl {
                                 + "this murder.");
         startingScene.setMapSymbol("Start");
         startingScene.setBlocked(false); 
-        startingScene.setTravelTime(240);
         scenes[SceneType.start.ordinal()] = startingScene; 
         
         Scene fightScene = new Scene();
@@ -52,7 +82,6 @@ class MapControl {
                                 + "to kill him, but it looks like it is my only option.");
         fightScene.setMapSymbol("Fight");
         fightScene.setBlocked(false); 
-        fightScene.setTravelTime(240);
         scenes[SceneType.fight.ordinal()] = fightScene; 
         
         Scene interactionScene = new Scene();
@@ -61,7 +90,6 @@ class MapControl {
                                 + "help me out.");
         interactionScene.setMapSymbol("Interaction");
         interactionScene.setBlocked(false); 
-        interactionScene.setTravelTime(240);
         scenes[SceneType.interaction.ordinal()] = interactionScene; 
         
         Scene choiceScene = new Scene();
@@ -70,7 +98,6 @@ class MapControl {
                                 + "should I head?");
         choiceScene.setMapSymbol("Choice");
         choiceScene.setBlocked(false); 
-        choiceScene.setTravelTime(240);
         scenes[SceneType.choice.ordinal()] = choiceScene; 
         
         Scene investigationScene = new Scene();
@@ -81,14 +108,12 @@ class MapControl {
                                 + "this murder.");
         investigationScene.setMapSymbol("Investigation");
         investigationScene.setBlocked(false); 
-        investigationScene.setTravelTime(240);
         scenes[SceneType.investigation.ordinal()] = investigationScene;
         
         Scene blockScene = new Scene();
         blockScene.setDescription(
                                   "Looks like i can't go this direction, I need to choose another way.");
-        blockScene.setBlocked(false); 
-        blockScene.setTravelTime(240);
+        blockScene.setBlocked(true); 
         scenes[SceneType.block.ordinal()] = blockScene; 
         
         Scene solveScene = new Scene();
@@ -96,7 +121,6 @@ class MapControl {
                                   "Look there is a man covered up in blood. We have solved the mystery."
                                 + "We have found the murderer!!!");
         solveScene.setBlocked(false); 
-        solveScene.setTravelTime(240);
         scenes[SceneType.solve.ordinal()] = solveScene; 
         
         
@@ -117,34 +141,34 @@ class MapControl {
         
     }
     
-    private static void assignScenesLocation(Map map, Scene[] scenes){
+    private static void assignScenesToLocations(Map map, Scene[] scenes){
         Location[] [] locations = map.getLocations();
         
-        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.investigation.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.investigation.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.fight.ordinal()]);
-        locations[1][0].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[1][1].setScene(scenes[SceneType.block.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[1][3].setScene(scenes[SceneType.interaction.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.block.ordinal()]);
-        locations[2][0].setScene(scenes[SceneType.fight.ordinal()]);
-        locations[2][1].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[2][3].setScene(scenes[SceneType.interaction.ordinal()]);
-        locations[2][4].setScene(scenes[SceneType.investigation.ordinal()]);
-        locations[3][0].setScene(scenes[SceneType.fight.ordinal()]);
-        locations[3][1].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[3][2].setScene(scenes[SceneType.interaction.ordinal()]);
-        locations[3][3].setScene(scenes[SceneType.interaction.ordinal()]);
-        locations[3][4].setScene(scenes[SceneType.solve.ordinal()]);
-        locations[4][0].setScene(scenes[SceneType.investigation.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.fight.ordinal()]);
-        locations[4][2].setScene(scenes[SceneType.choice.ordinal()]);
-        locations[4][3].setScene(scenes[SceneType.investigation.ordinal()]);
-        locations[4][4].setScene(scenes[SceneType.block.ordinal()]);
+        locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[0][2].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
+        locations[0][3].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
+        locations[0][4].setScene(scenes[MapControl.SceneType.fight.ordinal()]);
+        locations[1][0].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[1][1].setScene(scenes[MapControl.SceneType.block.ordinal()]);
+        locations[1][2].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[1][3].setScene(scenes[MapControl.SceneType.interaction.ordinal()]);
+        locations[1][4].setScene(scenes[MapControl.SceneType.block.ordinal()]);
+        locations[2][0].setScene(scenes[MapControl.SceneType.fight.ordinal()]);
+        locations[2][1].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[2][2].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[2][3].setScene(scenes[MapControl.SceneType.interaction.ordinal()]);
+        locations[2][4].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
+        locations[3][0].setScene(scenes[MapControl.SceneType.fight.ordinal()]);
+        locations[3][1].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[3][2].setScene(scenes[MapControl.SceneType.interaction.ordinal()]);
+        locations[3][3].setScene(scenes[MapControl.SceneType.interaction.ordinal()]);
+        locations[3][4].setScene(scenes[MapControl.SceneType.solve.ordinal()]);
+        locations[4][0].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
+        locations[4][1].setScene(scenes[MapControl.SceneType.fight.ordinal()]);
+        locations[4][2].setScene(scenes[MapControl.SceneType.choice.ordinal()]);
+        locations[4][3].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
+        locations[4][4].setScene(scenes[MapControl.SceneType.block.ordinal()]);
     
     }
 }

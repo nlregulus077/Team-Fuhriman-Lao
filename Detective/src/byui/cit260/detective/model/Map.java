@@ -15,11 +15,11 @@ import java.io.Serializable;
 public class Map implements Serializable {
 
     
-    private double rowCount;
-    private double columnCount;
+    private int rowCount;
+    private int columnCount;
     private Location[] [] locations;
     private int noOfRows;
-    private int noOfCOlumns;
+    private int noOfColumns;
 
     public Map() {
     }
@@ -32,8 +32,9 @@ public class Map implements Serializable {
             
         }
     
-    this.noOfRows = noOfRows;
-    this.noOfCOlumns = noOfColumns; 
+    this.noOfRows = 5;
+    this.noOfColumns = 5; 
+    
     
     this.locations = new Location[noOfRows] [noOfColumns];
     
@@ -55,19 +56,19 @@ public class Map implements Serializable {
     
     
 
-    public double getRowCount() {
-        return rowCount;
+    public int getRowCount() {
+        return noOfRows;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public double getColumnCount() {
-        return columnCount;
+    public int getColumnCount() {
+        return noOfColumns;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 
@@ -106,7 +107,7 @@ public class Map implements Serializable {
     }
 
     public Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return locations;
     }
     
     

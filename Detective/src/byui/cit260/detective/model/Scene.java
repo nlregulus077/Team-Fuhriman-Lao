@@ -17,6 +17,9 @@ public class Scene implements Serializable{
     private String description;
     private String location;
     private String options;
+    private boolean blocked;
+
+    
 
     public Scene() {
     }
@@ -44,6 +47,14 @@ public class Scene implements Serializable{
 
     public void setOptions(String options) {
         this.options = options;
+    }
+    
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     @Override
@@ -85,16 +96,10 @@ public class Scene implements Serializable{
     }
 
     public void setMapSymbol(String fight) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setMapSymbol() called ***");
     }
 
-    public void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    public void setTravelTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     

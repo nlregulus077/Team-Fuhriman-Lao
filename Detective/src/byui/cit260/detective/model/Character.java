@@ -5,6 +5,7 @@
  */
 package byui.cit260.detective.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -14,17 +15,21 @@ import java.util.Objects;
  */
 public enum Character implements Serializable {
     
+    Player_Detective("..."),
     Jane("Hello. What can I get for you?"),
     Jack("Hello."),
-    Blake(".......");
+    Blake("......."),
+    Claire("What do you want?"),
+    Thug("You're dead.");
     
     
     private final String dialogue;
-    private final Location location;
+    private final Point location;
 
     Character(String dialogue) {
         this.dialogue = dialogue;
-        location = new Location();
+        location = new Point(0,0);
+        
     }
 
    
@@ -35,7 +40,7 @@ public enum Character implements Serializable {
 
     
 
-    public Location getLocation() {
+    public Point getLocation() {
         return location;
     }
 }
