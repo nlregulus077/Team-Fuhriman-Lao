@@ -5,16 +5,19 @@
  */
 package byui.cit260.detective.control;
 
+import byui.cit260.detective.exceptions.IntelligenceSceneControlException;
+
 /**
  *
  * @author Nina
  */
 public class IntelligenceSceneControl {
     
-    public int calcMeetIntelSkillRequirements(long intelSkill, long intelRequirement) {
+    public int calcMeetIntelSkillRequirements(long intelSkill, long intelRequirement) 
+    throws IntelligenceSceneControlException {
         
         if (intelSkill < 0 || intelSkill > 10) {
-            return -1;
+            throw new IntelligenceSceneControlException("Invalid values. Please enter new value.");
         }
         
         double intelResult = (intelSkill + 2) * 0.5;

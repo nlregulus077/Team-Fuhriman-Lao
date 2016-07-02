@@ -31,7 +31,14 @@ public class Detective {
     
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
+        
+        try {
         startProgramView.displayStartProgramView();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
     }       
 
     public static Game getCurrentGame() {

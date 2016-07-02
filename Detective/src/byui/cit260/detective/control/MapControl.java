@@ -9,6 +9,9 @@ import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Scene;
 import byui.cit260.detective.control.MapControl;
+import byui.cit260.detective.exceptions.MapControlException;
+import detective.Detective;
+import java.awt.Point;
 
 
 /**
@@ -170,5 +173,22 @@ class MapControl {
         locations[4][3].setScene(scenes[MapControl.SceneType.investigation.ordinal()]);
         locations[4][4].setScene(scenes[MapControl.SceneType.block.ordinal()]);
     
+    }
+    
+    public static void MoveCharacterToLocation (Character player, Point coordinates) 
+                    throws MapControlException {
+        
+        
+        Map gameMap = Detective.getCurrentGame().getMap();
+        int newRows = coordinates.x - 1;
+        int newCols = coordinates.y - 1;
+        
+        if (newRows < 0 || newRows >= gameMap.getRowCount() 
+                || newCols < 0 || newCols >= gameMap.getColumnCount()) {
+            throw new MapControlException("Can't move to this location "
+            + coordinates.x + ", " +coordinates.y + " because it's not on the map.");
+        }
+        
+        
     }
 }

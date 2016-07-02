@@ -77,18 +77,37 @@ public class SkillView {
          
          
          String playerIntelligenceSkill = playerIntelSkill;
+         
+         try {
          long intelligenceSkillValue = Long.parseLong(playerIntelligenceSkill);
+         } catch (NumberFormatException nf){
+             
+             System.out.println("\nInvalid value.");
+            
+         }
          
          this.promptMessage = this.cunningPrompt;
          
          String playerCunningSkill = this.getSkillInput();
+         
+         try {
          long cunningSkillValue = Long.parseLong(playerCunningSkill);
+         } catch (NumberFormatException nf) {
+             
+             System.out.println("\nInvalid value.");
+         }
          
          
          this.promptMessage = this.combatPrompt;
         
          String playerCombatSkill = this.getSkillInput();
+         
+         try {
          long combatSkillValue = Long.parseLong(playerCombatSkill);
+         } catch (NumberFormatException nf) {
+             
+             System.out.println("\nInvalid value");
+         }
          
          
       if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) > 10) {

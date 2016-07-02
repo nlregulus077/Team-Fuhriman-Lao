@@ -11,7 +11,11 @@ import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Player;
 import byui.cit260.detective.model.Scene;
 import byui.cit260.detective.model.Tool;
+import byui.cit260.detective.model.Character;
+import byui.cit260.detective.control.MapControl;
+import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
+import java.awt.Point;
 
 /**
  *
@@ -47,6 +51,18 @@ public class GameControl {
        
        MapControl.moveActorsToStartingLocation(map);
        
+    }
+    
+    public static void moveCharactersToStartingLocations(Map map)
+                        throws MapControlException {
+        Character[] characters = Character.values();
+        
+        for (Character npcs : characters) {
+            Point coordinates = npcs.getLocation();
+            MapControl.MoveCharacterToLocation(npcs, coordinates);
+        }
+        
+        
     }
 
     public static void saveSkills() {
