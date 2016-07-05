@@ -17,6 +17,9 @@ public class SkillView {
     private String intelPrompt;
     private String cunningPrompt;
     private String combatPrompt;
+    long intelligenceSkillValue;
+    long cunningSkillValue;
+    long combatSkillValue;
     
 
     public SkillView() {
@@ -78,8 +81,10 @@ public class SkillView {
          
          String playerIntelligenceSkill = playerIntelSkill;
          
+         
+         
          try {
-         long intelligenceSkillValue = Long.parseLong(playerIntelligenceSkill);
+         intelligenceSkillValue = Long.parseLong(playerIntelligenceSkill);
          } catch (NumberFormatException nf){
              
              System.out.println("\nInvalid value.");
@@ -90,8 +95,10 @@ public class SkillView {
          
          String playerCunningSkill = this.getSkillInput();
          
+        
+         
          try {
-         long cunningSkillValue = Long.parseLong(playerCunningSkill);
+         cunningSkillValue = Long.parseLong(playerCunningSkill);
          } catch (NumberFormatException nf) {
              
              System.out.println("\nInvalid value.");
@@ -102,8 +109,10 @@ public class SkillView {
         
          String playerCombatSkill = this.getSkillInput();
          
+         
+         
          try {
-         long combatSkillValue = Long.parseLong(playerCombatSkill);
+         combatSkillValue = Long.parseLong(playerCombatSkill);
          } catch (NumberFormatException nf) {
              
              System.out.println("\nInvalid value");
