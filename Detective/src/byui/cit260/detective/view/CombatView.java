@@ -6,7 +6,10 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.CombatSceneControl;
+import byui.cit260.detective.exceptions.CombatSceneControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +31,13 @@ public class CombatView extends View {
     public boolean doAction(String combatSkill) {
         // Call control function do combat
        CombatSceneControl combatScene = new CombatSceneControl();
-       int fight = combatScene.calcMeetCombatSkillRequirements(2,4);
+       int fight = 0;
+        try {
+            fight = combatScene.calcMeetCombatSkillRequirements(2,4);
+        } catch (CombatSceneControlException ex) {
+            System.out.println("\nYou can't do that.");
+            Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
        if (fight == 1){
            System.out.println ("\nYou win!!!");

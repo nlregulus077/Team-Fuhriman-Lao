@@ -5,23 +5,27 @@
  */
 package byui.cit260.detective.control;
 
+import byui.cit260.detective.exceptions.CombatSceneControlException;
+
 /**
  *
  * @author Logan
  */
 public class CombatSceneControl {
     
-    public int calcMeetCombatSkillRequirements(long combatSkill, long combatRequirement) {
+    public int calcMeetCombatSkillRequirements(long combatSkill, long combatRequirement) 
+            throws CombatSceneControlException {
+        
         
         if (combatSkill < 0 || combatSkill > 10) {
-            return -1;
+            throw new CombatSceneControlException("Can't calcuate combat skill");
         }
         
         double combatResult = (combatSkill + 4) / 2;
     
         if (combatResult >= combatRequirement) 
-            return 1;
-        else
+            throw new CombatSceneControlException("Can't calcuate combat skill");
+            else
             return 0;
     }
 }
