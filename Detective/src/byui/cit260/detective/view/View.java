@@ -5,6 +5,9 @@
  */
 package byui.cit260.detective.view;
 
+import detective.Detective;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = Detective.getInFile();
+    protected final PrintWriter console = Detective.getOutFile();
 
     public View() {
         
@@ -39,17 +45,16 @@ public abstract class View implements ViewInterface {
     
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
         boolean valid = false;
+        String selection = null;
+        
         
         while (!valid) {
-            System.out.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine();
-            value = value.trim();
+            selection = keyboard.readLine();
+            selection = selection.trim();
             
-            if (value.length() < 1) {
+            if (selection.length() < 1) {
                 System.out.println("\n Invalid value: value can not be blank.");
                 continue;
             }
@@ -57,7 +62,7 @@ public abstract class View implements ViewInterface {
             break;
         }
         
-        return value;
+        return selection;
     }
 
 

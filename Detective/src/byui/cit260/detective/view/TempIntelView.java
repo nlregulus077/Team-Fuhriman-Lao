@@ -16,6 +16,7 @@ public class TempIntelView extends View {
 
     private String playerIntelSkill;
     private long intelSkillValue;
+    int observation;
     
     public TempIntelView() {
         super("Please enter intel skill.");
@@ -23,7 +24,7 @@ public class TempIntelView extends View {
     
     @Override
     public boolean doAction (String intelSkill)
-           throws IntelligenceSceneControlException {
+            {
         IntelligenceSceneControl intelScene = new IntelligenceSceneControl();
         
         try {
@@ -33,7 +34,11 @@ public class TempIntelView extends View {
             System.out.println("Invalid value. Please enter again.");
         }
         
-        int observation = intelScene.calcMeetIntelSkillRequirements(intelSkillValue,4);
+        try {
+        observation = intelScene.calcMeetIntelSkillRequirements(intelSkillValue,4);
+        } catch (IntelligenceSceneControlException nf){
+            System.out.println("Invalid value.Please enter again.");
+        }
         
        if (observation == 1){
            System.out.println ("\nYou found something.");
@@ -42,7 +47,7 @@ public class TempIntelView extends View {
            System.out.println("\nThere's nothing else here. It's time to go.");
        }
        else if (observation < 0){
-           throw new IntelligenceSceneControlException("\nPlease enter a valid value.");
+           System.out.println("Not a valid value");
        }
        
        return true;
