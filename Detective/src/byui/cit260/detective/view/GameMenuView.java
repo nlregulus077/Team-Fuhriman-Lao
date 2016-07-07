@@ -140,7 +140,7 @@ public class GameMenuView extends View {
         int numCol = gameMap.getColumnCount();
         int numRow = gameMap.getRowCount();
         
-        this.console.println("    1     2     3     4     5");
+        this.console.println("     1     2     3     4     5");
         for (int row = 0; row < numRow; row++) {
             this.console.println(" --------------------------------");
             this.console.print((row + 1) + " ");

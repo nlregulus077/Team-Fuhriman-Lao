@@ -31,9 +31,10 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
-        console.println(displayMessage);
+       
         boolean done = false;
         do {
+            console.println(displayMessage);
             String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
