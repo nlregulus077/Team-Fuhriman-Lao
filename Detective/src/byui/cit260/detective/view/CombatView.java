@@ -28,7 +28,7 @@ public class CombatView extends View {
     
     
     @Override
-    public boolean doAction(String combatSkill) throws CombatSceneControlException {
+    public boolean doAction(String combatSkill)  {
         // Call control function do combat
        CombatSceneControl combatScene = new CombatSceneControl();
        int combatSkillValue;
@@ -40,6 +40,8 @@ public class CombatView extends View {
             fight = combatScene.calcMeetCombatSkillRequirements(combatSkillValue,4);
         } catch (NumberFormatException ex) {
             System.out.println("\nYou can't do that.");
+            Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CombatSceneControlException ex) {
             Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
         }
        
