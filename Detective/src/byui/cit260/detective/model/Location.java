@@ -6,8 +6,12 @@
 package byui.cit260.detective.model;
 
 
+import detective.Detective;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Logan
@@ -20,6 +24,8 @@ public class Location implements Serializable {
     private long requirement;
     private Scene scene; 
     private Character character; 
+    public final BufferedReader keyboard = Detective.getInFile();
+ public final PrintWriter console = Detective.getOutFile();
     
     
     
@@ -107,7 +113,7 @@ public class Location implements Serializable {
 
 
     public void setScene(Scene scene) {
-        System.out.println("*** setScene() ***");
+        this.console.println("*** setScene() ***");
     }
     
     

@@ -24,7 +24,7 @@ public class IntelligenceSceneControlTest {
     public void testCalcMeetIntelSkillRequirements() {
         
         // Test Case 1
-        System.out.println("Test Case 1");
+        this.console.println("Test Case 1");
         long intelSkill = 4;
         long intelRequirement = 4;
         IntelligenceSceneControl instance = new IntelligenceSceneControl();
@@ -33,7 +33,7 @@ public class IntelligenceSceneControlTest {
         assertEquals(expResult, result);
         
          // Test Case 2
-        System.out.println("Test Case 2");
+        this.console.println("Test Case 2");
         intelSkill = 6;
         intelRequirement = 4;
         expResult = 1;
@@ -41,7 +41,7 @@ public class IntelligenceSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 3
-        System.out.println("Test Case 3");
+        this.console.println("Test Case 3");
         intelSkill = -6;
         intelRequirement = 4;
         expResult = -1;
@@ -49,7 +49,7 @@ public class IntelligenceSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 4
-        System.out.println("Test Case 4");
+        this.console.println("Test Case 4");
         intelSkill = 11;
         intelRequirement = 4;
         expResult = -1;
@@ -57,7 +57,7 @@ public class IntelligenceSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 5
-        System.out.println("Test Case 5");
+        this.console.println("Test Case 5");
         intelSkill = 0;
         intelRequirement = 4;
         expResult = 0;
@@ -65,7 +65,7 @@ public class IntelligenceSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 6
-        System.out.println("Test Case 6");
+        this.console.println("Test Case 6");
         intelSkill = 10;
         intelRequirement = 4;
         expResult = 1;

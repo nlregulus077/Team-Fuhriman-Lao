@@ -74,7 +74,7 @@ public class FundamentalsView extends View {
                 this.HowToFight();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
               
         }
@@ -83,47 +83,47 @@ public class FundamentalsView extends View {
     }
 
     private void GoalGame() {
-        System.out.println("\n*** GoalGame() stub function called ***");
+        this.console.println("\n*** GoalGame() stub function called ***");
     }
 
     private void HowToMove() {
-        System.out.println("\n*** HowToMove() stub function called ***");
+        this.console.println("\n*** HowToMove() stub function called ***");
     }
 
     private void HowToCollect() {
-        System.out.println("\n*** HowToCollect() stub function called ***");
+        this.console.println("\n*** HowToCollect() stub function called ***");
     }
 
     private void UseItem() {
-        System.out.println("\n*** UseItem() stub function called ***");
+        this.console.println("\n*** UseItem() stub function called ***");
     }
 
     private void InventoryInstructions() {
-        System.out.println("\n*** InventoryInstructions() stub function called ***");    
+        this.console.println("\n*** InventoryInstructions() stub function called ***");    
     }
 
     private void ViewNotes() {
-        System.out.println("\n*** ViewNotes() stub function called ***"); 
+        this.console.println("\n*** ViewNotes() stub function called ***"); 
     }
 
     private void EquipmentUse() {
-        System.out.println("\n*** EquipmentUse() stub function called ***");
+        this.console.println("\n*** EquipmentUse() stub function called ***");
     }
 
     private void ViewClues() {
-        System.out.println("\n*** ViewClues() stub function called ***");
+        this.console.println("\n*** ViewClues() stub function called ***");
     }
 
     private void SearchClues() {
-        System.out.println("\n*** SearchClues() stub function called ***");
+        this.console.println("\n*** SearchClues() stub function called ***");
     }
 
     private void HowToTalk() {
-        System.out.println("\n*** HowToTalk() stub function called ***");
+        this.console.println("\n*** HowToTalk() stub function called ***");
     }
 
     private void HowToFight() {
-        System.out.println("\n*** HowToFight() stub function called ***");
+        this.console.println("\n*** HowToFight() stub function called ***");
     }
 }
     

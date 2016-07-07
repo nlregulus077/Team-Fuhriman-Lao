@@ -7,27 +7,32 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.model.Player;
+import detective.Detective;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
  *
  * @author Nina
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
     private String promptMessage;
+    
+   
 
     public StartProgramView() {
         
-        this.promptMessage = "\nYou have a vague memory of your name since waking up in the ransacked apartment." 
-                + "\nWhat is it?";
+         super("\nYou have a vague memory of your name since waking up in the ransacked apartment." 
+                + "\nWhat is it?");
         // display the banner when the view is created
         this.displayBanner();
     }
 
     private void displayBanner() {
        
-        System.out.println(
+        this.console.println(
         "\n************************************************************************"
         + "\n*                                                                      *"
         + "\n* Welcome to Detective!                                                *"
@@ -46,57 +51,25 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
-        
-        boolean done = false;
-        do {
-           // Prompt for and get the input
-           String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q")) 
-                return;
-
-             //do requested action and display the next view
-             done = this.doAction(playersName);
-        } while (!done); 
+     
         
     
     
-}
 
-    private String getPlayersName() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-      
-    }
 
-    private boolean doAction(String playersName) {
+    
+
+    @Override
+    public boolean doAction(String playersName) {
         if (playersName.length() < 2) {
-            System.out.println("\n Invalid player's name: " + "The name must be greater than one character in length.");
+            this.console.println("\n Invalid player's name: " + "The name must be greater than one character in length.");
             return false;
         }
         
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) {
-            System.out.println("\nError creating the player.");
+            this.console.println("\nError creating the player.");
             return false;
         }
         
@@ -105,7 +78,7 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n===================================================="
+        this.console.println("\n===================================================="
                          + "\n Welcome to the game " + player.getName() 
                          + "\n Good Luck!"
                          + "\n====================================================");

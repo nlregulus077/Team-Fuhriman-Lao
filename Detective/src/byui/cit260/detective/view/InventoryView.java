@@ -63,7 +63,7 @@ public class InventoryView extends View {
                 this.viewClue();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
     
 }
@@ -71,11 +71,11 @@ public class InventoryView extends View {
     }
 
     private void useGun() {
-        System.out.println("\n*** useGun() called ***");
+        this.console.println("\n*** useGun() called ***");
     }
 
     private void useKnife() {
-        System.out.println("\n*** useKnife() called ***");
+        this.console.println("\n*** useKnife() called ***");
     }
 
     private void useNotepad() {
@@ -84,23 +84,23 @@ public class InventoryView extends View {
     }
 
     private void useFlashlight() {
-        System.out.println("\n*** useFlashlight() called ***");
+        this.console.println("\n*** useFlashlight() called ***");
     }
 
     private void useBadge() {
-        System.out.println("\n*** useBadge() called ***");
+        this.console.println("\n*** useBadge() called ***");
     }
 
     private void useCrowbar() {
-        System.out.println("\n*** useCrowbar() called ***");
+        this.console.println("\n*** useCrowbar() called ***");
     }
 
     private void useFirstAIdKit() {
-        System.out.println("\n*** useFirstAidKit() called ***");
+        this.console.println("\n*** useFirstAidKit() called ***");
     }
 
     private void viewClue() {
-        System.out.println("\n*** viewClue() called ***");
+        this.console.println("\n*** viewClue() called ***");
     }
 }
     

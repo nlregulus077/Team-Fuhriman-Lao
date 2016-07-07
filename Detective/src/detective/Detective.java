@@ -39,6 +39,9 @@ public class Detective {
     private static BufferedReader inFile = null;
     
     private static PrintWriter logFile = null;
+    
+    public final BufferedReader keyboard = Detective.getInFile();
+    public final PrintWriter console = Detective.getOutFile();
 
     public static PrintWriter getLogFile() {
         return logFile;
@@ -66,14 +69,16 @@ public class Detective {
     
     
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
         
+        StartProgramView startProgramView = null;
         try {
-        startProgramView.displayStartProgramView();
+       
         
         Detective.inFile = 
                 new BufferedReader(new InputStreamReader(System.in));
         Detective.outFile = new PrintWriter(System.out, true);
+         startProgramView = new StartProgramView();
+         startProgramView.display();
         
         try {
         String filePath = "log.txt";
@@ -87,7 +92,7 @@ public class Detective {
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startProgramView.displayStartProgramView();
+            startProgramView.display();
         }
         
         finally {

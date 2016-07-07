@@ -58,7 +58,7 @@ public class MainMenuView extends View {
                 this.Fundamentals();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
               
         }
@@ -78,7 +78,7 @@ public class MainMenuView extends View {
     }
 
     private void LoadFile() {
-        System.out.println("\n*** LoadFile() called ***");
+        this.console.println("\n*** LoadFile() called ***");
     }
 
     private void Options() {
@@ -87,7 +87,7 @@ public class MainMenuView extends View {
     }
 
     private void Credits() {
-        System.out.println("\n*** Credits() called ***");
+        this.console.println("\n*** Credits() called ***");
     }
 
     private void Fundamentals() {

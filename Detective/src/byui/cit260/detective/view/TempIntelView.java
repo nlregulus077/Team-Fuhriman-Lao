@@ -31,23 +31,23 @@ public class TempIntelView extends View {
         intelSkillValue = Long.parseLong(intelSkill);
         } catch (NumberFormatException nf){
             
-            System.out.println("Invalid value. Please enter again.");
+            this.console.println("Invalid value. Please enter again.");
         }
         
         try {
         observation = intelScene.calcMeetIntelSkillRequirements(intelSkillValue,4);
         } catch (IntelligenceSceneControlException nf){
-            System.out.println("Invalid value.Please enter again.");
+            this.console.println("Invalid value.Please enter again.");
         }
         
        if (observation == 1){
-           System.out.println ("\nYou found something.");
+           this.console.println ("\nYou found something.");
        }
        else if (observation == 0) {
-           System.out.println("\nThere's nothing else here. It's time to go.");
+           this.console.println("\nThere's nothing else here. It's time to go.");
        }
        else if (observation < 0){
-           System.out.println("Not a valid value");
+           this.console.println("Not a valid value");
        }
        
        return true;

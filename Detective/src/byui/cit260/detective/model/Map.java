@@ -6,6 +6,9 @@
 package byui.cit260.detective.model;
 
 import byui.cit260.detective.control.GameControl;
+import detective.Detective;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 
 /**
@@ -20,6 +23,8 @@ public class Map implements Serializable {
     private Location[] [] locations;
     private int noOfRows;
     private int noOfColumns;
+    public final BufferedReader keyboard = Detective.getInFile();
+    public final PrintWriter console = Detective.getOutFile();
 
     public Map() {
     }
@@ -27,7 +32,7 @@ public class Map implements Serializable {
     public Map(int noOfRows, int noOfColumns) {
         
         if (noOfRows < 1 || noOfColumns < 1) {
-            System.out.println("The numbers of rows and columns must be greater than 0");
+            this.console.println("The numbers of rows and columns must be greater than 0");
         return;
             
         }

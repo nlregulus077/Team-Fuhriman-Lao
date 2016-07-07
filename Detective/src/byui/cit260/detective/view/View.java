@@ -21,9 +21,7 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = Detective.getInFile();
     protected final PrintWriter console = Detective.getOutFile();
 
-    public View() {
-        
-    }
+    
         
     public View(String message) {
         this.displayMessage = message;
@@ -33,6 +31,7 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
+        console.println(displayMessage);
         boolean done = false;
         do {
             String menuOption = this.getInput();
@@ -48,18 +47,21 @@ public abstract class View implements ViewInterface {
         boolean valid = false;
         String selection = null;
         
-        
+        try {
         while (!valid) {
             
-            selection = keyboard.readLine();
+            selection = this.keyboard.readLine();
             selection = selection.trim();
             
             if (selection.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
+                this.console.println("\n Invalid value: value can not be blank.");
                 continue;
             }
             
             break;
+        }
+        } catch (Exception e) {
+            this.console.println("Error reading input: " + e.getMessage());
         }
         
         return selection;

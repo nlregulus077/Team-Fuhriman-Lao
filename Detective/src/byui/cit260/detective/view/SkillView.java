@@ -5,6 +5,9 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.model.Player;
+import detective.Detective;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -20,6 +23,9 @@ public class SkillView {
     long intelligenceSkillValue;
     long cunningSkillValue;
     long combatSkillValue;
+    
+    protected final BufferedReader keyboard = Detective.getInFile();
+    protected final PrintWriter console = Detective.getOutFile();
     
 
     public SkillView() {
@@ -49,13 +55,13 @@ public class SkillView {
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             this.promptMessage = this.intelPrompt;
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank.");
+                this.console.println("\n Invalid value: value can not be blank.");
                 continue;
             }
             
@@ -87,7 +93,7 @@ public class SkillView {
          intelligenceSkillValue = Long.parseLong(playerIntelligenceSkill);
          } catch (NumberFormatException nf){
              
-             System.out.println("\nInvalid value.");
+             this.console.println("\nInvalid value.");
             
          }
          
@@ -101,7 +107,7 @@ public class SkillView {
          cunningSkillValue = Long.parseLong(playerCunningSkill);
          } catch (NumberFormatException nf) {
              
-             System.out.println("\nInvalid value.");
+             this.console.println("\nInvalid value.");
          }
          
          
@@ -115,22 +121,22 @@ public class SkillView {
          combatSkillValue = Long.parseLong(playerCombatSkill);
          } catch (NumberFormatException nf) {
              
-             System.out.println("\nInvalid value");
+             this.console.println("\nInvalid value");
          }
          
          
       if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) > 10) {
-          System.out.println("You have more than 10 skill points.  Please reassign." + "\n");
+          this.console.println("You have more than 10 skill points.  Please reassign." + "\n");
           return false;
       }
       
       else if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) <= 0) {
-          System.out.println("Invalid values.  Please reassign." + "\n");
+          this.console.println("Invalid values.  Please reassign." + "\n");
           return false;
       }
       
       else if ((intelligenceSkillValue + cunningSkillValue + combatSkillValue) < 10) {
-          System.out.println("You still have leftover points. Please reassign." + "\n");
+          this.console.println("You still have leftover points. Please reassign." + "\n");
           return false;
       }
       

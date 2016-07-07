@@ -62,7 +62,7 @@ public class GameMenuView extends View {
                 this.enterCombat();
                 break; 
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
               
         }
@@ -71,7 +71,8 @@ public class GameMenuView extends View {
     }
 
     private void observeArea() {
-        System.out.println("\n*** observeArea() stub function called ***");
+       TempIntelView tempIntelView =  new TempIntelView();
+       tempIntelView.display();
     }
 
     private void viewInventory() {
@@ -80,26 +81,26 @@ public class GameMenuView extends View {
         Game game = Detective.getCurrentGame();
         Tool[] tool = game.getToolList();
         
-        System.out.println("\n      Inventory");
+        this.console.println("\n      Inventory");
         line = new StringBuilder("                          ");
         line.insert(0, "Description");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for (Tool item: tool) {
             line = new StringBuilder("                           ");
             line.insert(0, item.getDescription());
             
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
         
     }
 
     private void takeItem() {
-        System.out.println("\n*** takeItem() stub function called ***");
+        this.console.println("\n*** takeItem() stub function called ***");
     }
 
     private void talkToCharacter() {
-        System.out.println("\n*** talkToCharacter() stub function called ***");
+        this.console.println("\n*** talkToCharacter() stub function called ***");
     }
 
     private void enterCombat() {
@@ -132,28 +133,28 @@ public class GameMenuView extends View {
         Map gameMap = Detective.getCurrentGame().getMap();
         Location[][] locations = gameMap.getLocations();
         
-        System.out.println("\n------------------------------------------" 
+        this.console.println("\n------------------------------------------" 
                           + "\n Undercity Map"
                           + "\n------------------------------------------"); 
         
         int numCol = gameMap.getColumnCount();
         int numRow = gameMap.getRowCount();
         
-        System.out.println("    1     2     3     4     5");
+        this.console.println("    1     2     3     4     5");
         for (int row = 0; row < numRow; row++) {
-            System.out.println(" --------------------------------");
-            System.out.print((row + 1) + " ");
+            this.console.println(" --------------------------------");
+            this.console.print((row + 1) + " ");
             for (int col = 0; col < numCol; col++) {
            
                 
-                    System.out.print("|");
-                    System.out.print("  x  ");
+                    this.console.print("|");
+                    this.console.print("  x  ");
                
             }
                 
-                System.out.print("|\n");
+                this.console.print("|\n");
             }
-        System.out.println(" --------------------------------");
+        this.console.println(" --------------------------------");
             
         }
         

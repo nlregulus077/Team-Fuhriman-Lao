@@ -35,7 +35,7 @@ public class NotepadView extends View {
                 this.addNotes();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
     
 }
@@ -43,7 +43,7 @@ public class NotepadView extends View {
     }
 
     private void viewNotes() {
-        System.out.println("*** viewNotes() stub function called. ***");
+        this.console.println("*** viewNotes() stub function called. ***");
     }
 
     private void addNotes() {

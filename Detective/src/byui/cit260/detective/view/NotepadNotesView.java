@@ -18,7 +18,7 @@ public class NotepadNotesView extends View {
         
      @Override
      public boolean doAction (String writtenNotes){
-         System.out.println("*** SaveNotes() called ***");
+         this.console.println("*** SaveNotes() called ***");
          return true;
      }
     

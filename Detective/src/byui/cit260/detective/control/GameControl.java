@@ -16,12 +16,17 @@ import byui.cit260.detective.control.MapControl;
 import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Nina
  */
 public class GameControl {
+    
+    public final BufferedReader keyboard = Detective.getInFile();
+    public final PrintWriter console = Detective.getOutFile();
 
     public static Player createPlayer(String name) {
         
@@ -66,7 +71,7 @@ public class GameControl {
     }
 
     public static void saveSkills() {
-        System.out.println("\n*** saveSkills() stub function called***");
+        
     }
 
     public static Tool[] createToolList() {

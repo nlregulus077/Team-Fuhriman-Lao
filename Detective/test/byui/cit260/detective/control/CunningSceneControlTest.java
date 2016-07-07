@@ -24,7 +24,7 @@ public class CunningSceneControlTest {
     public void testCalcMeetCunningRequirements() {
         
         // Test Case 1
-        System.out.println("Test Case 1");
+        this.console.println("Test Case 1");
         long cunningSkill = 3;
         long cunningRequirement = 4;
         CunningSceneControl instance = new CunningSceneControl();
@@ -33,7 +33,7 @@ public class CunningSceneControlTest {
         assertEquals(expResult, result);
        
         // Test Case 2
-        System.out.println("Test Case 2");
+        this.console.println("Test Case 2");
         cunningSkill = 1;
         cunningRequirement = 4;
         expResult = 0;
@@ -41,7 +41,7 @@ public class CunningSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 3
-        System.out.println("Test Case 3");
+        this.console.println("Test Case 3");
         cunningSkill = -6;
         cunningRequirement = 4;
         expResult = -1;
@@ -49,7 +49,7 @@ public class CunningSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 4
-        System.out.println("Test Case 4");
+        this.console.println("Test Case 4");
         cunningSkill = 11;
         cunningRequirement = 4;
         expResult = -1;
@@ -57,7 +57,7 @@ public class CunningSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 5
-        System.out.println("Test Case 5");
+        this.console.println("Test Case 5");
         cunningSkill = 0;
         cunningRequirement = 4;
         expResult = 0;
@@ -65,7 +65,7 @@ public class CunningSceneControlTest {
         assertEquals(expResult, result);
         
         // Test Case 6
-        System.out.println("Test Case 6");
+        this.console.println("Test Case 6");
         cunningSkill = 10;
         cunningRequirement = 4;
         expResult = 1;

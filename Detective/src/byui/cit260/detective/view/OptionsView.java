@@ -54,7 +54,7 @@ public class OptionsView extends View {
                 this.ClearData();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
               
         }
@@ -64,22 +64,22 @@ public class OptionsView extends View {
     
 
     private void Difficulty() {
-        System.out.println("\n*** Difficulty() called ***");
+        this.console.println("\n*** Difficulty() called ***");
     }
 
     private void Hints() {
-        System.out.println("\n*** Hints() called ***");
+        this.console.println("\n*** Hints() called ***");
     }
 
     private void Map() {
-        System.out.println("\n*** Map() called ***");
+        this.console.println("\n*** Map() called ***");
     }
 
     private void ExitMenu() {
-        System.out.println("\n*** ExitMenu() called ***");
+        this.console.println("\n*** ExitMenu() called ***");
     }
 
     private void ClearData() {
-        System.out.println("\n*** ClearData() called ***");
+        this.console.println("\n*** ClearData() called ***");
     }
 }

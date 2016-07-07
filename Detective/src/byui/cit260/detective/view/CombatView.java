@@ -39,20 +39,20 @@ public class CombatView extends View {
             combatSkillValue = Integer.parseInt(combatSkill);
             fight = combatScene.calcMeetCombatSkillRequirements(combatSkillValue,4);
         } catch (NumberFormatException ex) {
-            System.out.println("\nYou can't do that.");
+            this.console.println("\nYou can't do that.");
             Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CombatSceneControlException ex) {
             Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
         }
        
        if (fight == 1){
-           System.out.println ("\nYou win!!!");
+           this.console.println ("\nYou win!!!");
        }
        else if (fight == 0) {
-           System.out.println("\nYou are dead :(");
+           this.console.println("\nYou are dead :(");
        }
        else if (fight == -1){
-           System.out.println("\nPlease enter another number");
+           this.console.println("\nPlease enter another number");
        }
        
     
