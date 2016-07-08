@@ -113,7 +113,7 @@ public class Location implements Serializable {
 
 
     public void setScene(Scene scene) {
-        this.console.println("*** setScene() ***");
+        this.scene = scene;
     }
     
     

@@ -20,6 +20,15 @@ public class Scene implements Serializable{
     private String description;
     private String location;
     private String options;
+    private String mapSymbol;
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
     private boolean blocked;
     public final BufferedReader keyboard = Detective.getInFile();
     public final PrintWriter console = Detective.getOutFile();
@@ -100,10 +109,7 @@ public class Scene implements Serializable{
         return "Scene{" + "description=" + description + ", location=" + location + ", options=" + options + '}';
     }
 
-    public void setMapSymbol(String fight) {
-        this.console.println("*** setMapSymbol() called ***");
-    }
-
+    
 
     
     

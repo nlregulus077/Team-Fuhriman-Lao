@@ -77,6 +77,7 @@ public class Detective {
         Detective.inFile = 
                 new BufferedReader(new InputStreamReader(System.in));
         Detective.outFile = new PrintWriter(System.out, true);
+        Detective.logFile = new PrintWriter(System.out, true);
          startProgramView = new StartProgramView();
          startProgramView.display();
         

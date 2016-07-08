@@ -9,6 +9,7 @@ import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Scene;
 import byui.cit260.detective.control.MapControl;
+import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
@@ -19,6 +20,8 @@ import java.awt.Point;
  * @author Nina
  */
 class MapControl {
+    
+    
 
 
     static void moveActorsToStartingLocation(Map map) {
@@ -175,7 +178,7 @@ class MapControl {
     
     }
     
-    public static void MoveCharacterToLocation (Character player, Point coordinates) 
+    public static void moveCharacterToLocation (Character player, Point coordinates) 
                     throws MapControlException {
         
         

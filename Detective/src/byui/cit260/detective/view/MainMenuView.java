@@ -6,7 +6,11 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
+import byui.cit260.detective.exceptions.GameControlException;
+import byui.cit260.detective.model.Game;
 import detective.Detective;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 /**
@@ -46,7 +50,7 @@ public class MainMenuView extends View {
                 this.StartNewGame();
                 break;
             case "L":
-                this.LoadFile();
+                this.loadFile();
                 break;
             case "O":
                 this.Options();
@@ -77,8 +81,11 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void LoadFile() {
-        this.console.println("\n*** LoadFile() called ***");
+    private void loadFile() {
+        LoadGameView loadGameView = new LoadGameView();
+        loadGameView.display();
+       
+        
     }
 
     private void Options() {
@@ -87,7 +94,8 @@ public class MainMenuView extends View {
     }
 
     private void Credits() {
-        this.console.println("\n*** Credits() called ***");
+        this.console.println("\nThis game was created for Br. Jackson's CIT 260 class." +
+                "\nProgram created by Logan Fuhriman and Jeanina Lao.");
     }
 
     private void Fundamentals() {

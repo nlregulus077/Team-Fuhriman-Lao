@@ -13,10 +13,13 @@ import byui.cit260.detective.model.Scene;
 import byui.cit260.detective.model.Tool;
 import byui.cit260.detective.model.Character;
 import byui.cit260.detective.control.MapControl;
+import byui.cit260.detective.exceptions.GameControlException;
 import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 
 /**
@@ -64,7 +67,7 @@ public class GameControl {
         
         for (Character npcs : characters) {
             Point coordinates = npcs.getLocation();
-            MapControl.MoveCharacterToLocation(npcs, coordinates);
+            MapControl.moveCharacterToLocation(npcs, coordinates);
         }
         
         
@@ -80,36 +83,57 @@ public class GameControl {
         new Tool[7];
         
         Tool gun = new Tool();
-        gun.setDescription("Gun");
+        gun.setName("G - Gun");
+        gun.setDescription("It's a gun.");
         tools[Tool.item.gun.ordinal()] = gun; 
         
         Tool knife = new Tool();
-        knife.setDescription("Knife");
+        knife.setName("K - Knife");
+        knife.setDescription("It's sharp");
         tools[Tool.item.knife.ordinal()] = knife; 
         
         Tool notepad = new Tool();
-        notepad.setDescription("Notepad");
+        notepad.setName("N - Notepad");
+        notepad.setDescription("Record your notes.");
         tools[Tool.item.notepad.ordinal()] = notepad; 
         
         
         Tool flashlight = new Tool();
-        flashlight.setDescription("Flashlight");
+        flashlight.setName("F - Flashlight");
+        flashlight.setDescription("Could come in handy.");
         tools[Tool.item.flashlight.ordinal()] = flashlight; 
         
         Tool badge = new Tool();
-        badge.setDescription("Badge");
+        badge.setName("Badge");
+        badge.setDescription("Proof of your position as a detective.");
         tools[Tool.item.badge.ordinal()] = badge; 
         
         Tool crowbar = new Tool();
-        crowbar.setDescription("Crowbar");
+        crowbar.setDescription("C - Crowbar");
+        crowbar.setDescription("Blunt and heavy.  Careful where you swing it.");
         tools[Tool.item.crowbar.ordinal()] = crowbar; 
         
         Tool firstAidKit = new Tool();
-        firstAidKit.setDescription("First Aid Kit");
+        firstAidKit.setName("FA - First Aid Kit");
+        firstAidKit.setDescription("In case you're bleeding to death.");
         tools[Tool.item.firstAidKit.ordinal()] = firstAidKit; 
         
         return tools; 
     }
+    
+    public static void saveGame (Game game, String filepath)
+            throws GameControlException {
+        
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
         
     
 }

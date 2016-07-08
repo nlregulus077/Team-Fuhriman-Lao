@@ -5,6 +5,7 @@
  */
 package byui.cit260.detective.view;
 
+import byui.cit260.detective.control.GameControl;
 import static byui.cit260.detective.model.Character.Player_Detective;
 import byui.cit260.detective.model.Game;
 import byui.cit260.detective.model.Location;
@@ -31,6 +32,7 @@ public class GameMenuView extends View {
                   + "\n\tTAKE - Take an item"
                   + "\n\tTALK - Talk to a person"
                   + "\n\tFIGHT - Enter combat mode"
+                  + "\n\tS - Save"
                   + "\n\tQ - Quit"
                   + "\n---------------------------------------------------" +
                 "\n\nWhat will you do?")
@@ -61,6 +63,9 @@ public class GameMenuView extends View {
             case "FIGHT":
                 this.enterCombat();
                 break; 
+            case "S":
+                this.saveGame();
+                break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -83,11 +88,12 @@ public class GameMenuView extends View {
         
         this.console.println("\n      Inventory");
         line = new StringBuilder("                          ");
-        line.insert(0, "Description");
+        line.insert(0, "Name                Description");
         this.console.println(line.toString());
         
         for (Tool item: tool) {
             line = new StringBuilder("                           ");
+            line.insert(0, item.getName());
             line.insert(0, item.getDescription());
             
             this.console.println(line.toString());
@@ -157,6 +163,20 @@ public class GameMenuView extends View {
         this.console.println(" --------------------------------");
             
         }
+
+    private void saveGame() {
+        this.console.println("\n\nEnter the file path for file where the game " + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(Detective.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+    }
+    
+    
         
          
 }
