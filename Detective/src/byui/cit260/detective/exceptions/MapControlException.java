@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.exceptions;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class MapControlException extends Exception {
+public class MapControlException extends Exception implements Serializable {
 
     public MapControlException() {
     }

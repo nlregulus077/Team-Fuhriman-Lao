@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.view;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class NotepadNotesView extends View {
+public class NotepadNotesView extends View implements Serializable {
 
     public NotepadNotesView() {
          super("Write your notes here.  Type Q to quit.");

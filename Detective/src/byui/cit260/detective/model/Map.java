@@ -5,10 +5,7 @@
  */
 package byui.cit260.detective.model;
 
-import byui.cit260.detective.control.GameControl;
-import detective.Detective;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
+import byui.cit260.detective.exceptions.MapControlException;
 import java.io.Serializable;
 
 /**
@@ -23,17 +20,16 @@ public class Map implements Serializable {
     private Location[] [] locations;
     private int noOfRows;
     private int noOfColumns;
-    public final BufferedReader keyboard = Detective.getInFile();
-    public final PrintWriter console = Detective.getOutFile();
+    
 
     public Map() {
     }
 
-    public Map(int noOfRows, int noOfColumns) {
+    public Map(int noOfRows, int noOfColumns) throws MapControlException {
         
         if (noOfRows < 1 || noOfColumns < 1) {
-            this.console.println("The numbers of rows and columns must be greater than 0");
-        return;
+            throw new MapControlException("The numbers of rows and columns must be greater than 0");
+        
             
         }
     

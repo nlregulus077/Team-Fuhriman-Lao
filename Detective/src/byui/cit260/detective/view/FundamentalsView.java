@@ -5,13 +5,14 @@
  */
 package byui.cit260.detective.view;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Nina
  */
-public class FundamentalsView extends View {
+public class FundamentalsView extends View implements Serializable {
     
 
     public FundamentalsView() {

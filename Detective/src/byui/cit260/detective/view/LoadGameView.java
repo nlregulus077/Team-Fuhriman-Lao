@@ -7,12 +7,13 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.exceptions.GameControlException;
+import java.io.Serializable;
 
 /**
  *
  * @author Nina
  */
-public class LoadGameView extends View {
+public class LoadGameView extends View implements Serializable {
 
     public LoadGameView() {
         super("Enter the filepath where your text file is located");

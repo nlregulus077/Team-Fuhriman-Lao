@@ -6,12 +6,13 @@
 package byui.cit260.detective.control;
 
 import byui.cit260.detective.exceptions.IntelligenceSceneControlException;
+import java.io.Serializable;
 
 /**
  *
  * @author Nina
  */
-public class IntelligenceSceneControl {
+public class IntelligenceSceneControl implements Serializable {
     
     public int calcMeetIntelSkillRequirements(long intelSkill, long intelRequirement) 
     throws IntelligenceSceneControlException {

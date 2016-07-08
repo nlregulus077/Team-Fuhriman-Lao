@@ -6,12 +6,13 @@
 package byui.cit260.detective.control;
 
 import byui.cit260.detective.exceptions.CombatSceneControlException;
+import java.io.Serializable;
 
 /**
  *
  * @author Logan
  */
-public class CombatSceneControl {
+public class CombatSceneControl implements Serializable {
     
     public int calcMeetCombatSkillRequirements(long combatSkill, long combatRequirement) 
             throws CombatSceneControlException {

@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class CunningSceneControl {
+public class CunningSceneControl implements Serializable {
     
     public int calcMeetCunningRequirements (long cunningSkill, long cunningRequirement) {
         

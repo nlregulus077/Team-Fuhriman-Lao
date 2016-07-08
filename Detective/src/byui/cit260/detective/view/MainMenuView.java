@@ -11,13 +11,14 @@ import byui.cit260.detective.model.Game;
 import detective.Detective;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Nina
  */
-public class MainMenuView extends View {
+public class MainMenuView extends View implements Serializable {
     
 
     public MainMenuView() {

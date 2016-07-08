@@ -5,6 +5,7 @@
  */
 package byui.cit260.detective.view;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Logan
  */
-public class OptionsView extends View {
+public class OptionsView extends View implements Serializable {
     
      private String menu;
     private String promptMessage;

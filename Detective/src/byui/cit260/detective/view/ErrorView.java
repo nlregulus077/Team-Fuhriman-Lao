@@ -7,12 +7,13 @@ package byui.cit260.detective.view;
 
 import detective.Detective;
 import java.io.PrintWriter;
+import java.io.Serializable;
 
 /**
  *
  * @author Nina
  */
-public class ErrorView {
+public class ErrorView implements Serializable {
     
     private static final PrintWriter errorFile = Detective.getOutFile();
     private static final PrintWriter logFile = Detective.getLogFile();

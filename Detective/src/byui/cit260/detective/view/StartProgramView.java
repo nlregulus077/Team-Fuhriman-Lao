@@ -10,13 +10,14 @@ import byui.cit260.detective.model.Player;
 import detective.Detective;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Nina
  */
-public class StartProgramView extends View {
+public class StartProgramView extends View implements Serializable {
     
     private String promptMessage;
     

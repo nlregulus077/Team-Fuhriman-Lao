@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.view;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Logan
  */
-public class InventoryView extends View {
+public class InventoryView extends View implements Serializable {
     
     private String menu;
     private String promptMessage;

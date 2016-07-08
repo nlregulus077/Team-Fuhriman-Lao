@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.exceptions;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Logan
  */
-public class CombatSceneControlException extends Exception {
+public class CombatSceneControlException extends Exception implements Serializable {
 
     public CombatSceneControlException() {
     }

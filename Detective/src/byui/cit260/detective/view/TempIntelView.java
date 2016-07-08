@@ -7,12 +7,13 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.IntelligenceSceneControl;
 import byui.cit260.detective.exceptions.IntelligenceSceneControlException;
+import java.io.Serializable;
 
 /**
  *
  * @author Nina
  */
-public class TempIntelView extends View {
+public class TempIntelView extends View implements Serializable {
 
     private String playerIntelSkill;
     private long intelSkillValue;

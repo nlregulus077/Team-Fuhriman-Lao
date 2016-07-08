@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.exceptions;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class GameControlException extends Exception {
+public class GameControlException extends Exception implements Serializable {
 
     public GameControlException() {
     }

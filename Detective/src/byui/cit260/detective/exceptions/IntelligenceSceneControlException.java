@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.exceptions;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class IntelligenceSceneControlException extends Exception {
+public class IntelligenceSceneControlException extends Exception implements Serializable {
 
     public IntelligenceSceneControlException() {
     }

@@ -5,9 +5,6 @@
  */
 package byui.cit260.detective.model;
 
-import detective.Detective;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -30,8 +27,7 @@ public class Scene implements Serializable{
         this.mapSymbol = mapSymbol;
     }
     private boolean blocked;
-    public final BufferedReader keyboard = Detective.getInFile();
-    public final PrintWriter console = Detective.getOutFile();
+    
 
     
 

@@ -13,13 +13,14 @@ import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
+import java.io.Serializable;
 
 
 /**
  *
  * @author Nina
  */
-class MapControl {
+class MapControl implements Serializable {
     
     
 
@@ -57,7 +58,7 @@ class MapControl {
         
     }
     
-    static Map createMap () {
+    static Map createMap () throws MapControlException {
         
         Map map = new Map(5, 5);
         

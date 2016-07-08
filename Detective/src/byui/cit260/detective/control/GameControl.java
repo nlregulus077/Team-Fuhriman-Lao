@@ -23,12 +23,13 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.io.Serializable;
 
 /**
  *
  * @author Nina
  */
-public class GameControl {
+public class GameControl implements Serializable {
     
     public final BufferedReader keyboard = Detective.getInFile();
     public final PrintWriter console = Detective.getOutFile();
@@ -47,7 +48,7 @@ public class GameControl {
         return player;
     }
     
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
        Game game = new Game();
        Detective.setCurrentGame(game);
        

@@ -7,6 +7,7 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.CombatSceneControl;
 import byui.cit260.detective.exceptions.CombatSceneControlException;
+import java.io.Serializable;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Logan
  */
-public class CombatView extends View {
+public class CombatView extends View implements Serializable {
 
     private String promptMessage;
     private boolean skill;

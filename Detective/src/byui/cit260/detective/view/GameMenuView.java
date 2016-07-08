@@ -12,13 +12,14 @@ import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Tool;
 import detective.Detective;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Nina
  */
-public class GameMenuView extends View {
+public class GameMenuView extends View implements Serializable {
     
 
     public GameMenuView() {
