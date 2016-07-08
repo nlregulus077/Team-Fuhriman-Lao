@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class CombatScene extends Scene{
+public class CombatScene extends Scene implements Serializable {
     private double combatRequirement;
 
     public CombatScene() {

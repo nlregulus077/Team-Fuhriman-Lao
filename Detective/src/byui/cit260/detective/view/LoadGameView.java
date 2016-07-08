@@ -5,11 +5,8 @@
  */
 package byui.cit260.detective.view;
 
+import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.exceptions.GameControlException;
-import byui.cit260.detective.model.Game;
-import detective.Detective;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 
 /**
  *
@@ -17,26 +14,24 @@ import java.io.ObjectInputStream;
  */
 public class LoadGameView extends View {
 
-    public LoadGameView(String message) {
+    public LoadGameView() {
         super("Enter the filepath where your text file is located");
     }
+
     
     @Override
-    public boolean doAction (String filepath) 
-         throws GameControlException {
-         Game game = null;
-        
-        try ( FileInputStream fips = new FileInputStream(filepath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            
-            game = (Game) input.readObject();
+    public boolean doAction (String filepath) {
+        try {
+            GameControl.loadFile(filepath);
+        } catch (GameControlException ex) {
+            this.console.println(ex.getMessage());
+            return false;
         }
-        catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
+
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
         
-        Detective.setCurrentGame(game);
-        return false;
+        return true;
     }
     
 }

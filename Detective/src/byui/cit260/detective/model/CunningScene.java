@@ -5,11 +5,13 @@
  */
 package byui.cit260.detective.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nina
  */
-public class CunningScene extends Scene {
+public class CunningScene extends Scene implements Serializable {
     private double cunningRequirement;
 
     public CunningScene() {

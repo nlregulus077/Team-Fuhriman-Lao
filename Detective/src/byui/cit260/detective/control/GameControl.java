@@ -18,7 +18,9 @@ import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 
@@ -134,6 +136,21 @@ public class GameControl {
         }
     }
     
+    public static void loadFile (String filepath) 
+        throws GameControlException {
+         Game game = null;
         
+        try ( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        Detective.setCurrentGame(game);
+        
+    }
     
 }

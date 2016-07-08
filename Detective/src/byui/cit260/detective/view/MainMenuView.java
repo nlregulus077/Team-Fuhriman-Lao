@@ -83,9 +83,7 @@ public class MainMenuView extends View {
 
     private void loadFile() {
         LoadGameView loadGameView = new LoadGameView();
-        loadGameView.display();
-       
-        
+        loadGameView.display();     
     }
 
     private void Options() {
