@@ -6,23 +6,13 @@
 package detective;
 
 import byui.cit260.detective.model.Game;
-import byui.cit260.detective.model.Location;
-import byui.cit260.detective.model.Map;
-import byui.cit260.detective.model.Tool;
-import byui.cit260.detective.view.StartProgramView;
 import byui.cit260.detective.model.Player;
-import byui.cit260.detective.model.Character;
-import byui.cit260.detective.model.CombatScene;
-import byui.cit260.detective.model.CunningScene;
-import byui.cit260.detective.model.IntelligenceScene;
-import byui.cit260.detective.model.Scene;
+import byui.cit260.detective.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author Nina

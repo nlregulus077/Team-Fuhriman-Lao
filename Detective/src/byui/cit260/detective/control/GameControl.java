@@ -87,38 +87,38 @@ public class GameControl implements Serializable {
         
         Tool gun = new Tool();
         gun.setName("G - Gun");
-        gun.setDescription("It's a gun.");
+        gun.setDescription("(It's a gun.)");
         tools[Tool.item.gun.ordinal()] = gun; 
         
         Tool knife = new Tool();
         knife.setName("K - Knife");
-        knife.setDescription("It's sharp");
+        knife.setDescription("(It's sharp)");
         tools[Tool.item.knife.ordinal()] = knife; 
         
         Tool notepad = new Tool();
         notepad.setName("N - Notepad");
-        notepad.setDescription("Record your notes.");
+        notepad.setDescription("(Record your notes.)");
         tools[Tool.item.notepad.ordinal()] = notepad; 
         
         
         Tool flashlight = new Tool();
         flashlight.setName("F - Flashlight");
-        flashlight.setDescription("Could come in handy.");
+        flashlight.setDescription("(Could come in handy.)");
         tools[Tool.item.flashlight.ordinal()] = flashlight; 
         
         Tool badge = new Tool();
-        badge.setName("Badge");
-        badge.setDescription("Proof of your position as a detective.");
+        badge.setName("B - Badge");
+        badge.setDescription("(Proof of your position as a detective.)");
         tools[Tool.item.badge.ordinal()] = badge; 
         
         Tool crowbar = new Tool();
         crowbar.setName("C - Crowbar");
-        crowbar.setDescription("Blunt and heavy.  Careful where you swing it.");
+        crowbar.setDescription("(Blunt and heavy.  Careful where you swing it.)");
         tools[Tool.item.crowbar.ordinal()] = crowbar; 
         
         Tool firstAidKit = new Tool();
         firstAidKit.setName("FA - First Aid Kit");
-        firstAidKit.setDescription("In case you're bleeding to death.");
+        firstAidKit.setDescription("(In case you're bleeding to death.)");
         tools[Tool.item.firstAidKit.ordinal()] = firstAidKit; 
         
         return tools; 

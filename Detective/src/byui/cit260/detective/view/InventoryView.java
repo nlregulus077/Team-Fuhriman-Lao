@@ -30,7 +30,7 @@ public class InventoryView extends View implements Serializable {
              
              for (Tool item: tool) {
                 
-                this.console.println("\n" + item.getName() + "                     " + item.getDescription());
+                this.console.println("\n" + item.getName() + "  " + item.getDescription());
              }
                  
               this.console.println ("\n----------------------------------------------------");
