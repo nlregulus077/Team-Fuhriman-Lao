@@ -22,8 +22,11 @@ public class Tool implements Serializable {
     private String name;
     private String type;
     private String description;
+    private String amount;
 
     public Tool() {
+        
+        
     }
  
 
@@ -49,6 +52,9 @@ public class Tool implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public void setAmount(String amount) {
+        this.amount = description;
     }
 
     @Override
@@ -97,7 +103,7 @@ public class Tool implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public enum item{
-        gun,
+        gun,   
         knife,
         notepad,
         flashlight,
