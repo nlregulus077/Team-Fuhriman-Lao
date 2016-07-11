@@ -112,7 +112,7 @@ public class GameControl implements Serializable {
         tools[Tool.item.badge.ordinal()] = badge; 
         
         Tool crowbar = new Tool();
-        crowbar.setDescription("C - Crowbar");
+        crowbar.setName("C - Crowbar");
         crowbar.setDescription("Blunt and heavy.  Careful where you swing it.");
         tools[Tool.item.crowbar.ordinal()] = crowbar; 
         

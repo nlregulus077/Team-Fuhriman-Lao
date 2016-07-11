@@ -7,12 +7,15 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.exceptions.GameControlException;
+import byui.cit260.detective.exceptions.MapControlException;
 import byui.cit260.detective.model.Game;
 import detective.Detective;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -76,7 +79,11 @@ public class MainMenuView extends View implements Serializable {
         skillView.displaySkillView();
         
         GameControl.saveSkills();
-        GameControl.createNewGame(Detective.getPlayer());
+        try {
+            GameControl.createNewGame(Detective.getPlayer());
+        } catch (MapControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

@@ -6,14 +6,12 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
-import static byui.cit260.detective.model.Character.Player_Detective;
 import byui.cit260.detective.model.Game;
 import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Tool;
 import detective.Detective;
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *
@@ -82,24 +80,8 @@ public class GameMenuView extends View implements Serializable {
     }
 
     private void viewInventory() {
-        StringBuilder line;
-        
-        Game game = Detective.getCurrentGame();
-        Tool[] tool = game.getToolList();
-        
-        this.console.println("\n      Inventory");
-        line = new StringBuilder("                          ");
-        line.insert(0, "Name                Description");
-        this.console.println(line.toString());
-        
-        for (Tool item: tool) {
-            line = new StringBuilder("                           ");
-            line.insert(0, item.getName());
-            line.insert(0, item.getDescription());
-            
-            this.console.println(line.toString());
-        }
-        
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 
     private void takeItem() {

@@ -5,7 +5,10 @@
  */
 package byui.cit260.detective.view;
 
+import byui.cit260.detective.model.Tool;
+import detective.Detective;
 import java.io.Serializable;
+
 
 /**
  *
@@ -17,21 +20,22 @@ public class InventoryView extends View implements Serializable {
     private String promptMessage;
 
     public InventoryView() {
-             super("\n"
+             super("\n\nWhich one do you need?");
+             this.console.println("\n"
                   + "\n ---------------------------------------------------"
                   + "\n | Inventory                                  |"
-                  + "\n ---------------------------------------------------"
-                  + "\nG- Gun"
-                  + "\nK- Knife"
-                  + "\nN- Notpad"
-                  + "\nF- Flashlight"
-                  + "\nB- Badge"
-                  + "\nC- Crowbar"
-                  + "\nA- First Aid Kit"
-                  + "\nCLUE- Clue"
-                  + "\nQ- Quit"
-                  + "\n----------------------------------------------------" + 
-                     "\n\nWhich one do you need?");
+                  + "\n ---------------------------------------------------");
+             
+             Tool[] tool = Detective.getCurrentGame().getToolList();
+             
+             for (Tool item: tool) {
+                
+                this.console.println("\n" + item.getName() + "                     " + item.getDescription());
+             }
+                 
+              this.console.println ("\n----------------------------------------------------");
+             
+             
     }
     
      @Override
