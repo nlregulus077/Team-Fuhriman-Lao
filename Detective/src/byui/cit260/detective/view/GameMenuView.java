@@ -89,7 +89,8 @@ public class GameMenuView extends View implements Serializable {
     }
 
     private void talkToCharacter() {
-        this.console.println("\n*** talkToCharacter() stub function called ***");
+        CharacterView characterView = new CharacterView();
+        characterView.display();
     }
 
     private void enterCombat() {

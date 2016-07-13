@@ -30,6 +30,8 @@ import java.io.Serializable;
  * @author Nina
  */
 public class GameControl implements Serializable {
+
+   
     
     public final BufferedReader keyboard = Detective.getInFile();
     public final PrintWriter console = Detective.getOutFile();
@@ -57,12 +59,15 @@ public class GameControl implements Serializable {
        Tool[] toolList = GameControl.createToolList();
        game.setToolList(toolList);
        
+       
        Map map = MapControl.createMap();
        game.setMap(map);
        
        MapControl.moveActorsToStartingLocation(map);
        
     }
+    
+     
     
     public static void moveCharactersToStartingLocations(Map map)
                         throws MapControlException {

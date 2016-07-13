@@ -17,6 +17,7 @@ public class Game implements Serializable {
     private double highScore; 
     private Map map;
     private Tool[] toolList;
+    
 
    
 
@@ -55,6 +56,8 @@ public class Game implements Serializable {
     public void setMap(Map map) {
         this.map = map;
     }
+    
+   
     
     @Override
     public int hashCode() {

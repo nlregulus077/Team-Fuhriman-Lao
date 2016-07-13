@@ -31,8 +31,6 @@ public enum Character implements Serializable {
         
     }
 
-   
-
     public String getDialogue() {
         return dialogue;
     }
