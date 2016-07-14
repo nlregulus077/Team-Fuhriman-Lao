@@ -71,23 +71,28 @@ public class CharacterView extends View {
     }
 
     private void talkToJack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println(Character.Jack.getDialogue());
     }
 
     private void talkToBlake() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println(Character.Blake.getDialogue());
+        this.console.println("It seems that she knows something.");
+        
+        TempCunningView cunningView = new TempCunningView();
+        cunningView.display();
+        
     }
 
     private void talkToClaire() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println(Character.Claire.getDialogue());
     }
 
     private void beatTheCrudOutOfTheThug() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println(Character.Thug.getDialogue());
     }
 
     private void thinkToYourself() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println(Character.Player_Detective.getDialogue());
     }
 
     private void saveList() {

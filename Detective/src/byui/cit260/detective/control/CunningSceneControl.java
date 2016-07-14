@@ -5,6 +5,7 @@
  */
 package byui.cit260.detective.control;
 
+import byui.cit260.detective.exceptions.CunningSceneControlException;
 import java.io.Serializable;
 
 /**
@@ -13,7 +14,8 @@ import java.io.Serializable;
  */
 public class CunningSceneControl implements Serializable {
     
-    public int calcMeetCunningRequirements (long cunningSkill, long cunningRequirement) {
+    public int calcMeetCunningRequirements (long cunningSkill, long cunningRequirement) 
+                throws CunningSceneControlException {
         
         if (cunningSkill < 0 || cunningSkill > 10){
             return -1;
