@@ -15,7 +15,7 @@ import byui.cit260.detective.exceptions.CunningSceneControlException;
 public class TempCunningView extends View {
     private String playerCunningSkill;
     private long cunningSkillValue;
-    int charisma;
+    long charisma;
     
     public TempCunningView() {
         super("Please enter cunning skill.");
@@ -28,7 +28,7 @@ public class TempCunningView extends View {
         CunningSceneControl cunningScene = new CunningSceneControl();
         
         try {
-        cunningSkillValue = Long.parseLong(playerCunningSkill);
+        cunningSkillValue = Long.parseLong(cunningSkill);
         } catch (NumberFormatException nf){
             
             this.console.println("Invalid value. Please enter again.");

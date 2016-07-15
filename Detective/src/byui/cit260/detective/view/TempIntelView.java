@@ -17,7 +17,7 @@ public class TempIntelView extends View implements Serializable {
 
     private String playerIntelSkill;
     private long intelSkillValue;
-    int observation;
+    long observation;
     
     public TempIntelView() {
         super("Please enter intel skill.");
