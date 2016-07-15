@@ -99,26 +99,6 @@ public class GameMenuView extends View implements Serializable {
     }
 
     private void viewMap() {
-         /*
-        BEGIN
-            get the map locations from the current game
-            DISPLAY title
-            DISPLAY row of column numbers
-            FOR every row in map
-             DISPLAY row divider
-             DISPLAY row number
-                FOR every column in row
-                DISPLAY column divider
-                location = locations[row][column]
-                IF location has been visited
-                DISPLAY the map symbol for location
-                ELSE
-                DISPLAY " ?? "
-                ENDIF
-                 DISPLAY ending column divider
-                 ENDFOR
-                DISPLAY ending row divider 
-        */
          
         Map gameMap = Detective.getCurrentGame().getMap();
         Location[][] locations = gameMap.getLocations();
@@ -145,11 +125,14 @@ public class GameMenuView extends View implements Serializable {
                 this.console.print("|\n");
             }
         this.console.println(" --------------------------------");
+        
+        MapView mapView = new MapView();
+        mapView.display();
             
         }
 
     private void saveGame() {
-        this.console.println("\n\nEnter the file path for file where the game " + "is to be saved.");
+        this.console.println("\n\nWhere do you want to save your game? (Enter filepath here.)");
         String filePath = this.getInput();
         
         try {
