@@ -5,12 +5,15 @@
  */
 package byui.cit260.detective.view;
 import byui.cit260.detective.model.Character;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Nina
  */
 public class CharacterView extends View {
+    
+    Character[] npcList = Character.values();
 
     public CharacterView() {
          super("\nTalk to who? (Type the person's name to interact or type S to save this list or type Q to quit.)");
@@ -18,8 +21,7 @@ public class CharacterView extends View {
                   + "\n ---------------------------------------------------"
                   + "\n | People to talk to...                             |"
                   + "\n ---------------------------------------------------");
-         
-         Character[] npcList = Character.values();
+        
          
          for (Character npc : npcList){
              
@@ -61,7 +63,9 @@ public class CharacterView extends View {
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
     
-}
+        }
+        
+        
         return false;
     }
 
@@ -96,7 +100,20 @@ public class CharacterView extends View {
     }
 
     private void saveList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String fileLocation = "characters.txt";
+        
+        try (PrintWriter out = new PrintWriter(fileLocation)) {
+            out.println("\n\tList of Characters");
+            
+            for (Character npcs: npcList) {
+                out.printf("%n%-20s", npcs.name());
+            }
+            
+        } catch (Exception ex) {
+            this.console.println("CharacterView" + ex.getMessage());
+        }
     }
+       
     
 }
