@@ -101,7 +101,8 @@ public class CharacterView extends View {
 
     private void saveList() {
         
-        String fileLocation = "characters.txt";
+        this.console.println("Enter the location you want to save this list in: ");
+        String fileLocation = this.getInput();
         
         try (PrintWriter out = new PrintWriter(fileLocation)) {
             out.println("\n\tList of Characters");
