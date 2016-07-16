@@ -75,7 +75,7 @@ class MapControl implements Serializable {
         
         Scene startingScene = new Scene();
         startingScene.setDescription(
-                                  "We heard that there has been a murder. After with consulting with"
+                                  "We heard that there has been a murder. After consulting "
                                 + "with the boss, we believe this is the best place to start. Here"
                                 + " is where the body was left. Lets figure out who has committed "
                                 + "this murder.");

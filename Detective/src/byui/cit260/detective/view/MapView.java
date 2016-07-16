@@ -5,6 +5,11 @@
  */
 package byui.cit260.detective.view;
 
+
+import byui.cit260.detective.control.MoveControl;
+import byui.cit260.detective.exceptions.MoveControlException;
+import byui.cit260.detective.model.MapLocations;
+
 /**
  *
  * @author Nina
@@ -12,20 +17,31 @@ package byui.cit260.detective.view;
 public class MapView extends View {
 
     public MapView() {
-        super("Where do you want to go?");
+        super("\nWhere do you want to go?");
+        
+        MapLocations[] mapLocations = MapLocations.values();
+        
+        this.console.println("\nLocation List: ");
+        for (MapLocations places:mapLocations) {
+            this.console.println(places);
+        }
+        
     }
     
-    
     @Override
-    public boolean doAction(String choice) {
+    public boolean doAction(String locationInput){
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        try {
             
-              
+        MoveControl moveControl = new MoveControl();
+        moveControl.movePlayerCharacter(locationInput);
+        } catch (MoveControlException ex) {
+            this.console.println("Please type the location as you see it.");
+            
         }
         
         return false;
+        
+        }
+    
     }
-}
