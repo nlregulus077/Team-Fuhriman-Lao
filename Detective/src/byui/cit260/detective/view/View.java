@@ -8,7 +8,6 @@ package byui.cit260.detective.view;
 import detective.Detective;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 /**
  *

@@ -7,11 +7,7 @@ package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
 import byui.cit260.detective.model.Player;
-import detective.Detective;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *

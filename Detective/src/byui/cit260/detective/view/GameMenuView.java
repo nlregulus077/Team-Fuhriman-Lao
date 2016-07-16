@@ -6,10 +6,8 @@
 package byui.cit260.detective.view;
 
 import byui.cit260.detective.control.GameControl;
-import byui.cit260.detective.model.Game;
 import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
-import byui.cit260.detective.model.Tool;
 import detective.Detective;
 import java.io.Serializable;
 

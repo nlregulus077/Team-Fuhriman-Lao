@@ -5,16 +5,13 @@
  */
 package byui.cit260.detective.control;
 
-import byui.cit260.detective.model.Game;
-import byui.cit260.detective.model.Location;
-import byui.cit260.detective.model.Map;
-import byui.cit260.detective.model.Player;
-import byui.cit260.detective.model.Scene;
-import byui.cit260.detective.model.Tool;
-import byui.cit260.detective.model.Character;
-import byui.cit260.detective.control.MapControl;
 import byui.cit260.detective.exceptions.GameControlException;
 import byui.cit260.detective.exceptions.MapControlException;
+import byui.cit260.detective.model.Character;
+import byui.cit260.detective.model.Game;
+import byui.cit260.detective.model.Map;
+import byui.cit260.detective.model.Player;
+import byui.cit260.detective.model.Tool;
 import detective.Detective;
 import java.awt.Point;
 import java.io.BufferedReader;

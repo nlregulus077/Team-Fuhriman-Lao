@@ -6,7 +6,6 @@
 package byui.cit260.detective.view;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 
 

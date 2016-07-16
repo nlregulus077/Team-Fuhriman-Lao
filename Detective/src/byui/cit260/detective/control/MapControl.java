@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 package byui.cit260.detective.control;
+import byui.cit260.detective.exceptions.MapControlException;
 import byui.cit260.detective.model.Character;
 import byui.cit260.detective.model.Location;
 import byui.cit260.detective.model.Map;
 import byui.cit260.detective.model.Scene;
-import byui.cit260.detective.control.MapControl;
-import byui.cit260.detective.control.GameControl;
-import byui.cit260.detective.exceptions.MapControlException;
 import detective.Detective;
 import java.awt.Point;
 import java.io.Serializable;
