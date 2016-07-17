@@ -31,15 +31,18 @@ public class MapView extends View {
     @Override
     public boolean doAction(String locationInput){
         
-        try {
+        
             
         MoveControl moveControl = new MoveControl();
+        
+        try {
         moveControl.movePlayerCharacter(locationInput);
         } catch (MoveControlException ex) {
             this.console.println("Please type the location as you see it.");
             
         }
         
+        this.console.println("You have arrived at " + locationInput);
         return false;
         
         }
