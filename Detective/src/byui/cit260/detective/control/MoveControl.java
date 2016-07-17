@@ -24,5 +24,7 @@ public class MoveControl {
         
         Character.Player_Detective.getLocation().x = coord.x;
         Character.Player_Detective.getLocation().y = coord.y;
+        
+        
     }
 }
