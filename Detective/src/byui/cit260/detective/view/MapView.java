@@ -42,7 +42,7 @@ public class MapView extends View {
             return false;
         }
         
-        this.console.println("\nYou have arrived at " + locationInput + ".");
+        this.console.println("\nYou have arrived at the" + locationInput + ".");
         return false;
         
         }
