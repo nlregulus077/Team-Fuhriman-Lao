@@ -16,7 +16,7 @@ import byui.cit260.detective.model.Character;
  */
 public class MoveControl {
     
-    public void movePlayerCharacter (String locationName) throws MoveControlException {
+    public void movePlayerCharacter (String locationName) throws IllegalArgumentException {
         
         MapLocations roomLocation = Enum.valueOf(MapLocations.class, locationName);
         

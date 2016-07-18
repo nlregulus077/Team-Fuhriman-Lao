@@ -29,7 +29,7 @@ public class MapView extends View {
     }
     
     @Override
-    public boolean doAction(String locationInput){
+    public boolean doAction(String locationInput)  {
         
         
             
@@ -37,9 +37,9 @@ public class MapView extends View {
         
         try {
         moveControl.movePlayerCharacter(locationInput);
-        } catch (MoveControlException ex) {
+        } catch (IllegalArgumentException ex) {
             this.console.println("Please type the location as you see it.");
-            
+            return false;
         }
         
         this.console.println("\nYou have arrived at " + locationInput + ".");
