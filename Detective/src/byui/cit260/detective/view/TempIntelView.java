@@ -33,6 +33,7 @@ public class TempIntelView extends View implements Serializable {
         } catch (NumberFormatException nf){
             
             this.console.println("Invalid value. Please enter again.");
+            return false;
         }
         
         try {
@@ -49,6 +50,7 @@ public class TempIntelView extends View implements Serializable {
        }
        else if (observation < 0){
            this.console.println("Not a valid value");
+           return false;
        }
        
        return true;
