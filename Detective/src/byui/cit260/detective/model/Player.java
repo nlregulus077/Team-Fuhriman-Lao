@@ -32,7 +32,7 @@ public class Player implements Serializable
         this.name = name;
     }
 
-    public double getIntelligenceSkill() {
+    public long getIntelligenceSkill() {
         return intelligenceSkill;
     }
 
@@ -40,7 +40,7 @@ public class Player implements Serializable
         this.intelligenceSkill = intelligenceSkill;
     }
 
-    public double getCombatSkill() {
+    public long getCombatSkill() {
         return combatSkill;
     }
 
@@ -48,7 +48,7 @@ public class Player implements Serializable
         this.combatSkill = combatSkill;
     }
 
-    public double getCunningSkill() {
+    public long getCunningSkill() {
         return cunningSkill;
     }
 
