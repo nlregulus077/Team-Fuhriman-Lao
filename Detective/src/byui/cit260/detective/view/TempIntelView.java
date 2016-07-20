@@ -39,7 +39,8 @@ public class TempIntelView extends View implements Serializable {
         try {
         observation = intelScene.calcMeetIntelSkillRequirements(intelSkillValue,4);
         } catch (IntelligenceSceneControlException nf){
-            this.console.println("Invalid value.Please enter again.");
+            this.console.println("Invalid value. Please enter again.");
+            return false;
         }
         
        if (observation == 1){
