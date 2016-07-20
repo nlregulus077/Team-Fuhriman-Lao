@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable
 {
     // class instance variables
-    private String name;
+    public String name;
     public static long intelligenceSkill;
     public static long combatSkill;
     public static long cunningSkill;

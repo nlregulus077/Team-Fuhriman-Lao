@@ -23,9 +23,9 @@ public class CharacterView extends View {
                   + "\n ---------------------------------------------------");
         
          
-         for (Character npc : npcList){
+         for (int i = 1; i < (npcList.length); i++){
              
-             this.console.println(npc);
+             this.console.println(npcList[i]);
          }
         
     }
