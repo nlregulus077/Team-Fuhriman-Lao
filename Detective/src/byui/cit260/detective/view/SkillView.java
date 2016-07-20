@@ -3,6 +3,7 @@
  */
 package byui.cit260.detective.view;
 
+import byui.cit260.detective.control.GameControl;
 import detective.Detective;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -140,6 +141,7 @@ public class SkillView implements Serializable{
       }
       
       else {
+          GameControl.saveSkills(intelligenceSkillValue, cunningSkillValue, combatSkillValue);
           return true;
       }
         

@@ -73,7 +73,7 @@ public class MainMenuView extends View implements Serializable {
         SkillView skillView = new SkillView();
         skillView.displaySkillView();
         
-        GameControl.saveSkills();
+        
         try {
             GameControl.createNewGame(Detective.getPlayer());
         } catch (MapControlException ex) {

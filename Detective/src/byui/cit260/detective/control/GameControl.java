@@ -78,8 +78,10 @@ public class GameControl implements Serializable {
         
     }
 
-    public static void saveSkills() {
-        
+    public static void saveSkills(long intelligenceValue, long cunningValue, long combatValue) {
+        Player.intelligenceSkill = intelligenceValue;
+        Player.combatSkill = combatValue;
+        Player.cunningSkill = cunningValue;
     }
 
     public static Tool[] createToolList() {
