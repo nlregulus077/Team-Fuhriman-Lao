@@ -18,7 +18,7 @@ public class CunningSceneControl implements Serializable {
                 throws CunningSceneControlException {
         
         if (cunningSkill < 0 || cunningSkill > 10){
-            return -1;
+            throw new CunningSceneControlException("Invalid values. Please enter a new value.");
         }
         
         double cunningResult = cunningSkill + 3 / 1.5;

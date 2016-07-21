@@ -32,6 +32,7 @@ public class TempCunningView extends View {
         } catch (NumberFormatException nf){
             
             this.console.println("Invalid value. Please enter again.");
+            return false;
         }
         
         try {
@@ -40,6 +41,7 @@ public class TempCunningView extends View {
         } catch (CunningSceneControlException nf){
             
             this.console.println("Invalid value.Please enter again.");
+            return false;
         }
         
        if (charisma == 1){

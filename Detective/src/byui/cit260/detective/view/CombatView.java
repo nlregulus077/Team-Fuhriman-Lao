@@ -19,6 +19,8 @@ public class CombatView extends View implements Serializable {
 
     private String promptMessage;
     private boolean skill;
+    private int combatSkillValue;
+       
 
     public CombatView() {
         super("\n Please enter your combat skill");
@@ -31,19 +33,28 @@ public class CombatView extends View implements Serializable {
     public boolean doAction(String combatSkill)  {
         // Call control function do combat
        CombatSceneControl combatScene = new CombatSceneControl();
-       int combatSkillValue;
        
        
        int fight = 0;
         try {
-            combatSkillValue = Integer.parseInt(combatSkill);
-            fight = combatScene.calcMeetCombatSkillRequirements(combatSkillValue,4);
+       combatSkillValue = Integer.parseInt(combatSkill);
+          
         } catch (NumberFormatException ex) {
-            this.console.println("\nYou can't do that.");
-            Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CombatSceneControlException ex) {
-            Logger.getLogger(CombatView.class.getName()).log(Level.SEVERE, null, ex);
+            this.console.println("\nPlease don't do that.");
+            return false;
         }
+          
+        try {
+        
+           fight = combatScene.calcMeetCombatSkillRequirements(combatSkillValue, 4);
+           
+        } catch (CombatSceneControlException ex) {
+            this.console.println("\nYou can't do that.");
+            return false;
+        }
+            
+       
+           
        
        if (fight == 1){
            this.console.println ("\nYou win!!!");
